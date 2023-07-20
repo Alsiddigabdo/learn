@@ -1,0 +1,339 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>شرح لغة HTML5</title>
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    /* Main styles */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f1f1f1;
+      padding: 20px;
+      background-color:white;
+    }
+    
+    .article {
+      max-width: 800px;
+      background-color: #fff;
+      padding: 20px;
+      margin: 0 auto;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    }
+    
+    h1 {
+      font-size: 24px;
+      margin-bottom: 10px;
+      color:red;
+    }
+    
+    h2 {
+      font-size: 20px;
+      margin-bottom: 10px;
+      text-align:center ;
+      color:blue;
+    }
+    
+    p {
+      font-size: 16px;
+      line-height: 1.5;
+      margin-bottom: 20px;
+      text-align :center ;
+      color:black;
+    }
+    
+    pre {
+      background-color: #f5f5f5;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    
+    code {
+      color: green;
+    }
+    h1{
+      text-align:center;
+      color:red;
+    }
+
+
+button {
+  position: fixed;
+    top: 15px;
+    right: 10px;
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #555;
+}
+
+  </style>
+  
+</head>
+<body>
+<button onclick="goBack()">رجوع</button>
+
+  
+<article>
+    <h1>شرح العناصر الرئيسية في HTML5</h1>
+    <p>فيما يلي شرح للعناصر الرئيسية في لغة HTML5 مع ذكر أمثلة لاستخدام كل عنصر:</p>
+    
+    <h2>1. عنصر &lt;header&gt;:</h2>
+    <p>يُستخدم لتحديد رأس الصفحة وعرض المعلومات العلوية للصفحة مثل الشعار أو العنوان الرئيسي للصفحة.</p>
+    <pre><code>
+&lt;header&gt;
+    &lt;h1&gt;عنوان الصفحة&lt;/h1&gt;
+&lt;/header&gt;
+    </code></pre>
+    
+    <h2>2. عنصر &lt;nav&gt;:</h2>
+    <p>يُستخدم لتحديد قائمة التنقل الرئيسية للصفحة.</p>
+    <pre><code>
+&lt;nav&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href="#"&gt;الصفحة الرئيسية&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;من نحن&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;خدماتنا&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;
+    </code></pre>
+    
+    <h2>3. عنصر &lt;section&gt;:</h2>
+    <p>يُستخدم لتحديد قسم من الصفحة.</p>
+    <pre><code>
+&lt;section&gt;
+    &lt;h2&gt;العنوان&lt;/h2&gt;
+    &lt;p&gt;محتوى القسم...&lt;/p&gt;
+&lt;/section&gt;
+    </code></pre>
+    
+    <h2>4. عنصر &lt;article&gt;:</h2>
+    <p>يُستخدم لتحديد مقالة مستقلة ضمن الصفحة، مثل تدوينة في مدونة.</p>
+    <pre><code>
+&lt;article&gt;
+    &lt;h2&gt;عنوان المقالة&lt;/h2&gt;
+    &lt;p&gt;محتوى المقالة...&lt;/p&gt;
+&lt;/article&gt;
+    </code></pre>
+    
+    <h2>5. عنصر &lt;aside&gt;:</h2>
+    <p>يُستخدم لتحديد محتوى جانبي إضافي بجانب المحتوى الرئيسي.</p>
+    <pre><code>
+&lt;aside&gt;
+    &lt;h3&gt;أحدث المقالات&lt;/h3&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href="#"&gt;عنوان المقالة الأولى&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;عنوان المقالة الثانية&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/aside&gt;
+    </code></pre>
+    
+    <h2>6. عنصر &lt;footer&gt;:</h2>
+    <p>يُستخدم لتحديد تذييل الصفحة وعرض المعلومات السفلية للصفحة مثل حقوق التأليف والملكية.</p>
+    <pre><code>
+&lt;footer&gt;
+    &lt;p&gt;جميع الحقوق محفوظة &copy; 2023&lt;/p&gt;
+&lt;/footer&gt;
+    </code></pre>
+    
+    <h2>7. عنصر &lt;input&gt;:</h2>
+    <p>يُستخدم لإنشاء حقل إدخال للمستخدم لإدخال البيانات.</p>
+    <pre><code>
+&lt;input type="text" name="fullname" placeholder="الاسم الكامل"&gt;
+    </code></pre>
+</article>
+<article>
+    
+    <p>في هذا الجزء، سنقدم بعض العناصر الأخرى المتاحة في لغة HTML5 مع أمثلة لاستخدامها:</p>
+    
+    <h2>8. عنصر &lt;div&gt;:</h2>
+    <p>يُستخدم لتقسيم الصفحة إلى أقسام لتنظيم المحتوى أو تطبيق أنماط التنسيق.</p>
+    <pre><code>
+&lt;div&gt;
+    &lt;h3&gt;قسم 1&lt;/h3&gt;
+    &lt;p&gt;محتوى القسم الأول...&lt;/p&gt;
+&lt;/div&gt;
+&lt;div&gt;
+    &lt;h3&gt;قسم 2&lt;/h3&gt;
+    &lt;p&gt;محتوى القسم الثاني...&lt;/p&gt;
+&lt;/div&gt;
+    </code></pre>
+    
+    <h2>9. عنصر &lt;img&gt;:</h2>
+    <p>يُستخدم لإدراج صورة في الصفحة.</p>
+    <pre><code>
+&lt;img src="path/to/image.jpg" alt="وصف الصورة"&gt;
+    </code></pre>
+    
+    <h2>10. عنصر &lt;a&gt;:</h2>
+    <p>يُستخدم لإنشاء رابط على النص أو الصورة.</p>
+    <pre><code>
+&lt;a href="https://www.example.com"&gt;رابط الموقع الرسمي&lt;/a&gt;
+    </code></pre>
+    
+    <h2>11. عنصر &lt;ul&gt; و &lt;li&gt;:</h2>
+    <p>يُستخدمان لإنشاء قوائم غير مرتبة.</p>
+    <pre><code>
+&lt;ul&gt;
+    &lt;li&gt;عنصر 1&lt;/li&gt;
+    &lt;li&gt;عنصر 2&lt;/li&gt;
+    &lt;li&gt;عنصر 3&lt;/li&gt;
+&lt;/ul&gt;
+    </code></pre>
+    
+    <h2>12. عنصر &lt;ol&gt; و &lt;li&gt;:</h2>
+    <p>يُستخدمان لإنشاء قوائم مرتبة.</p>
+    <pre><code>
+&lt;ol&gt;
+    &lt;li&gt;عنصر 1&lt;/li&gt;
+    &lt;li&gt;عنصر 2&lt;/li&gt;
+    &lt;li&gt;عنصر 3&lt;/li&gt;
+&lt;/ol&gt;
+    </code></pre>
+</article>
+
+<article>
+    
+    
+    
+    
+    <h2>13. عنصر &lt;table&gt; و &lt;tr&gt; و &lt;td&gt;:</h2>
+    <p>يُستخدمون لإنشاء جداول.</p>
+    <pre><code>
+&lt;table&gt;
+    &lt;tr&gt;
+        &lt;th&gt;عنوان العمود 1&lt;/th&gt;
+        &lt;th&gt;عنوان العمود 2&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;الصف 1، خلية 1&lt;/td&gt;
+        &lt;td&gt;الصف 1، خلية 2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;الصف 2، خلية 1&lt;/td&gt;
+        &lt;td&gt;الصف 2، خلية 2&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+    </code></pre>
+    
+    <h2>14. عنصر &lt;form&gt; و &lt;input&gt;:</h2>
+    <p>يُستخدمان لإنشاء نموذج وحقول إدخال.</p>
+    <pre><code>
+&lt;form&gt;
+    &lt;label for="name"&gt;الاسم:&lt;/label&gt;
+    &lt;input type="text" id="name" name="name"&gt;
+    &lt;br&gt;
+    &lt;label for="email"&gt;البريد الإلكتروني:&lt;/label&gt;
+    &lt;input type="email" id="email" name="email"&gt;
+    &lt;br&gt;
+    &lt;input type="submit" value="إرسال"&gt;
+&lt;/form&gt;
+    </code></pre>
+    
+    <h2>15. عنصر &lt;header&gt; و &lt;footer&gt;:</h2>
+    <p>يُستخدمان لتعريف رأس وتذييل الصفحة.</p>
+    <pre><code>
+&lt;header&gt;
+    &lt;h1&gt;عنوان الموقع&lt;/h1&gt;
+    &lt;img src="logo.png" alt="شعار الموقع"&gt;
+&lt;/header&gt;
+
+&lt;footer&gt;
+    &lt;p&gt;جميع الحقوق محفوظة &copy; 2023&lt;/p&gt;
+&lt;/footer&gt;
+    </code></pre>
+</article>
+
+
+
+<article>
+    
+    
+    <h2>16. تضمين الصورة:</h2>
+    <p>لتضمين صورة في صفحتك، يمكنك استخدام العنصر &lt;img&gt; مع تحديد مسار الصورة في الخاصية src.</p>
+    <pre><code>
+&lt;img src="path/to/image.jpg" alt="وصف الصورة"&gt;
+    </code></pre>
+    
+    <h2>17. إضافة رابط:</h2>
+    <p>لإضافة رابط في صفحتك، يمكنك استخدام العنصر &lt;a&gt; مع تحديد العنوان في الخاصية href.</p>
+    <pre><code>
+&lt;a href="https://example.com"&gt;رابط الموقع&lt;/a&gt;
+    </code></pre>
+    
+    <h2>18. إدراج فيديو:</h2>
+    <p>لإدراج فيديو في صفحتك، يمكنك استخدام العنصر &lt;video&gt; وتحديد مسار الفيديو في الخاصية src.</p>
+    <pre><code>
+&lt;video src="path/to/video.mp4" controls&gt;&lt;/video&gt;
+    </code></pre>
+    
+    <h2>19. إضافة صوت:</h2>
+    <p>لإضافة ملف صوتي في صفحتك، يمكنك استخدام العنصر &lt;audio&gt; وتحديد مسار الملف الصوتي في الخاصية src.</p>
+    <pre><code>
+&lt;audio src="path/to/audio.mp3" controls&gt;&lt;/audio&gt;
+    </code></pre>
+    
+    <h2>20. إستخدام القوائم:</h2>
+    <p>يمكنك إنشاء قائمة مرتبة &lt;ol&gt; أو قائمة غير مرتبة &lt;ul&gt; باستخدام العنصر &lt;li&gt; لتعريف عناصر القائمة.</p>
+    <pre><code>
+&lt;ul&gt;
+    &lt;li&gt;عنصر 1&lt;/li&gt;
+    &lt;li&gt;عنصر 2&lt;/li&gt;
+    &lt;li&gt;عنصر 3&lt;/li&gt;
+&lt;/ul&gt;
+    </code></pre>
+    
+    <h2>21. العناصر الحبيبة:</h2>
+    <p>يمكنك استخدام العنصر &lt;iframe&gt; لتضمين صفحة ويب أخرى داخل صفحتك.</p>
+    <pre><code>
+&lt;iframe src="https://example.com"&gt;&lt;/iframe&gt;
+    </code></pre>
+    
+    <h2>22. إنشاء نماذج:</h2>
+    <p>يمكنك استخدام العنصر &lt;form&gt; لإنشاء نموذج في صفحتك، ويمكن استخدام العناصر الأخرى مثل &lt;input&gt; و &lt;select&gt; و &lt;textarea&gt; لتعريف حقول النموذج.</p>
+    <pre><code>
+&lt;form&gt;
+    &lt;label for="name"&gt;الاسم:&lt;/label&gt;
+    &lt;input type="text" id="name" name="name"&gt;
+    &lt;br&gt;
+    &lt;label for="email"&gt;البريد الإلكتروني:&lt;/label&gt;
+    &lt;input type="email" id="email" name="email"&gt;
+    &lt;br&gt;
+    &lt;input type="submit" value="إرسال"&gt;
+&lt;/form&gt;
+    </code></pre>
+</article>
+
+  </div>
+    <script src="main.js"></script>
+    <script>
+const linkElement = document.querySelector("a");
+linkElement.addEventListener("click", function(event) {
+  event.preventDefault();
+  alert("مرحبًا بك في الموقع الرسمي!");
+});
+//زر الرجوع
+function goBack() {
+  history.back();
+}
+    </script>
+
+</body>
+</html>
