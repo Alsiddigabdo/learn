@@ -1,0 +1,1395 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>جافا اسكريبت level1: شرح</title>
+    <style>
+            /* Reset CSS */
+body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        article {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: red;
+        }
+        h2 {
+            text-align: center;
+            color: blue;
+        }
+        pre {
+            background-color: #f5f5f5;
+            padding: 10px;
+            overflow-x: auto;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            white-space: pre-wrap;
+        }
+            code {
+              color: green;
+            }
+        ol {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+
+        @media screen and (max-width: 768px) {
+            /* تنسيق العنوان والكتابة الشفرة في شاشات الأحجام الصغيرة */
+            h1 {
+                font-size: 24px;
+            }
+            pre {
+                font-size: 14px;
+            }
+        }
+
+        /* إضافة جماليات إضافية */
+        body {
+            background-color: #f8f8f8;
+            padding: 20px;
+        }
+        article {
+            background-color: #fff;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+        ol {
+            list-style: decimal;
+        }
+        li::marker {
+            color: #3498db;
+        }
+button {
+  position: fixed;
+    top: 15px;
+    right: 10px;
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+
+    </style>
+</head>
+<body>
+    <button onclick="goBack()">رجوع</button>
+<article>
+    <h2>مصطلحات في JavaScript</h2>
+    <ul>
+      <li><code>Console.log(typeof المدخلات);</code> - يقوم بطباعة نوع القيمة المدخلة في وحدة التحكم.</li>
+      <li><code>Boolean</code> - يستخدم لتمثيل القيم المنطقية (صح أو خطأ).</li>
+      <li><code>Object</code> - يُستخدم لتمثيل هيكل معين أو كائن في اللغة.</li>
+      <li><code>Null</code> - يُستخدم لتعيين قيمة فارغة أو غير معرفة لمتغير.</li>
+      <li><code>String</code> - يُستخدم لتمثيل سلاسل النصوص.</li>
+      <li><code>Undefined</code> - يُستخدم لتعيين متغير غير معرف ولم يتم تعيين أي قيمة له بعد.</li>
+    </ul>
+    <h3>شكل الشيفرة المصدرية:</h3>
+    <pre><code>Console.log(typeof المدخلات);</code></pre>
+
+    <h2>الـ Console Table</h2>
+    <p>تُستخدم لطباعة قائمة بيانات بشكل جدولي في وحدة التحكم.</p>
+    <h3>شكل الشيفرة المصدرية:</h3>
+    <pre><code>Console.table("ahmed", "ali", "abbas");</code></pre>
+
+    <h2>المتغيرات (Variables)</h2>
+    <p>هي عبارة عن عوامل يتم تعيين القيم لها واستخدامها في البرنامج.</p>
+    <h3>مثال:</h3>
+    <pre><code>var user = "ahmed";
+var age = 37;
+console.log(user);
+console.log(user);
+console.log(age);</code></pre>
+    <p>النتيجة:</p>
+    <pre><code>Ahmed
+Ahmed
+                                  37</code></pre>
+
+    <h2>التعليقات (Comments)</h2>
+    <p>يتم استخدامها لشرح الشفرة المصدرية ولا تؤثر على تنفيذ البرنامج.</p>
+    <h3>شكل الشيفرة المصدرية:</h3>
+    <pre><code>// هذا تعليق على سطر واحد.</code></pre>
+    <p>معناها تعليق.</p>
+
+    <h2>الدمج (Concatenation)</h2>
+    <p>يستخدم لدمج النصوص أو القيم.</p>
+    <h3>مثال:</h3>
+    <pre><code>let a = "we love";
+let b = "javascript";
+let c = " مسافة ";
+console.log(a + c + b);</code></pre>
+    <p>النتيجة:</p>
+    <pre><code>We love مسافة javascript</code></pre>
+
+    <h2>التعامل مع الأرقام في JavaScript</h2>
+    <p>يمكن استخدام الدوال <code>parseInt</code> و <code>parseFloat</code> للتعامل مع الأرقام.</p>
+    <h3>مثال:</h3>
+    <pre><code>console.log(parseInt("100.500")); // النتيجة: 100</code></pre>
+    <h3>مثال:</h3>
+    <pre><code>console.log(parseFloat("100.500")); // النتيجة: 100.500</code></pre>
+
+    <h2>الأرقام بترميز مميز (Exponential Notation)</h2>
+    <p>يمكن استخدام الرموز <code>e</code> أو <code>E</code> لتمثيل الأعداد بترميز مميز.</p>
+    <h3>أمثلة:</h3>
+    <pre><code>console.log(1e6); // النتيجة: 1000000</code></pre>
+    <pre><code>console.log(1e8); // النتيجة: 100000000</code></pre>
+    <pre><code>console.log(10 ** 6); // النتيجة: 1000000</code></pre>
+
+    <h2>Math Object في JavaScript</h2>
+    <p>يحتوي على العديد من الدوال المفيدة للتعامل مع الأرقام.</p>
+    <pre><code>Math.round(9.3); // النتيجة: 9
+Math.round(9.6); // النتيجة: 10
+
+Math.floor(9.4); // النتيجة: 9
+
+Math.ceil(9.4); // النتيجة: 10
+
+Math.trunc(9.4); // النتيجة: 9
+
+Math.min(5, 3, 4, 6); // النتيجة: 3
+
+Math.max(5, 3, 4, 6); // النتيجة: 6
+
+Math.random(); // النتيجة: رقم عشوائي بين 0 و 1</code></pre>
+
+
+<h2>أساليب النصوص (String Methods)</h2>
+<p>تتيح لنا العديد من الدوال المفيدة للتعامل مع النصوص.</p>
+<h3>أمثلة:</h3>
+<pre><code>let name = "ahmed";
+console.log(name.charAt(2)); // النتيجة: "m"</code></pre>
+<pre><code>let name = " Ahmed ";
+console.log(name.trim()); // النتيجة: "Ahmed"</code></pre>
+<pre><code>let name = "ahmed";
+console.log(name.toUpperCase()); // النتيجة: "AHMED"</code></pre>
+<pre><code>let name = "AHMED";
+console.log(name.toLowerCase()); // النتيجة: "ahmed"</code></pre>
+
+<h2>أساليب النصوص (String Methods) - الجزء الثاني</h2>
+<pre><code>let text = "JavaScript is awesome.";
+console.log(text.indexOf("is")); // النتيجة: 11</code></pre>
+<pre><code>let text = "JavaScript is awesome.";
+console.log(text.lastIndexOf("is")); // النتيجة: 11</code></pre>
+<pre><code>let text = "JavaScript is awesome.";
+console.log(text.slice(4, 10)); // النتيجة: "Script"</code></pre>
+<pre><code>let text = "JavaScript is awesome.";
+console.log(text.repeat(3)); // النتيجة: "JavaScript is awesome.JavaScript is awesome.JavaScript is awesome."</code></pre>
+<pre><code>let text = "JavaScript is awesome.";
+console.log(text.split(" ")); // النتيجة: ["JavaScript", "is", "awesome."]</code></pre>
+<pre><code>let text = "JavaScript is awesome.";
+console.log(text.substring(4)); // النتيجة: "Script is awesome."</code></pre>
+<pre><code>let text = "JavaScript is awesome.";
+console.log(text.substr(4, 6)); // النتيجة: "Script"</code></pre>
+<pre><code>let text = "JavaScript is awesome.";
+console.log(text.includes("is")); // النتيجة: true</code></pre>
+<pre><code>let text = "JavaScript is awesome.";
+console.log(text.startsWith("JavaScript")); // النتيجة: true</code></pre>
+<pre><code>let text = "JavaScript is awesome.";
+console.log(text.endsWith("awesome.")); // النتيجة: true</code></pre>
+<h2>عوامل المقارنة (Comparison Operators)</h2>
+<p>تستخدم للمقارنة بين القيم وإرجاع قيمة منطقية (صح أو خطأ).</p>
+<ul>
+  <li><code>==</code> - يقارن إذا كانت القيم متساوية دون الاهتمام بنوع البيانات.</li>
+  <li><code>===</code> - يقارن إذا كانت القيم متساوية مع الاهتمام بنوع البيانات.</li>
+  <li><code>!=</code> - يقارن إذا كانت القيم غير متساوية.</li>
+  <li><code>&lt;</code> - يقارن إذا كانت القيمة الأولى أصغر من القيمة الثانية.</li>
+  <li><code>&gt;</code> - يقارن إذا كانت القيمة الأولى أكبر من القيمة الثانية.</li>
+  <li><code>&lt;=</code> - يقارن إذا كانت القيمة الأولى أصغر من القيمة الثانية أو تساويها.</li>
+  <li><code>&gt;=</code> - يقارن إذا كانت القيمة الأولى أكبر من القيمة الثانية أو تساويها.</li>
+</ul>
+
+<h2>العوامل المنطقية (Logical Operators)</h2>
+<ul>
+  <li><code>!</code> - يقوم بعملية النفي (العكس) للقيمة المنطقية.</li>
+  <li><code>&&</code> - يقوم بالمقارنة الشرطية "و" (AND).</li>
+  <li><code>||</code> - يقوم بالمقارنة الشرطية "أو" (OR).</li>
+</ul>
+  </article>
+  
+  
+  
+  <article>
+    <h2>If Condition</h2>
+    <pre><code>let country = "Sudan";
+let price = 100;
+let discount = true; // قم بتعديل القيمة إما true أو false
+let discountAmount = 30;
+
+if (discount === true) {
+  price -= discountAmount;
+} else if (country === "Sudan") {
+  price -= 40;
+} else {
+  price -= 10;
+}
+
+console.log("Discounted price: $" + price);</code></pre>
+
+    <h2>Logical OR (||)</h2>
+    <pre><code>let price = null; // قم بتعديل القيمة إما null أو 100
+console.log("The price is $" + (price || 200));</code></pre>
+
+    <h2>Uses of if Statement</h2>
+    <pre><code>let price = 100;
+let discount = false; // قم بتعديل القيمة إما true أو false
+let discountAmount = 30;
+let country = "Egypt";
+let student = true;
+
+if (discount === true) {
+  price -= discountAmount;
+} else if (country === "Egypt") {
+  if (student === true) {
+    price -= discountAmount + 30;
+  } else {
+    price -= discountAmount + 10;
+  }
+} else {
+  price -= 10;
+}
+
+console.log("Final price: $" + price);</code></pre>
+
+    <h2>Conditional (Ternary) Operator</h2>
+    <pre><code>let theName = "Mona";
+let theGender = "Female"; // قم بتعديل القيمة إما "Male" أو "Female"
+let result = theGender === "Male" ? "Mr" : "Mrs";
+
+console.log("Hello " + result + " " + theName);</code></pre>
+
+    <h2>Switch Statement</h2>
+    <pre><code>let day = "A"; // قم بتعديل القيمة إما "Saturday", "Sunday", "Monday" أو غير ذلك
+
+switch (day) {
+  case "Saturday":
+    console.log("Today is Saturday");
+    break;
+  case "Sunday":
+    console.log("Today is Sunday");
+    break;
+  case "Monday":
+    console.log("Today is Monday");
+    break;
+  default:
+    console.log("Unknown Day");
+}</code></pre>
+
+    <h2>Arrays</h2>
+    <pre><code>let myFriends = ["Ahmed", "Mohamed", "Sayed", ["Marwan", "Ali"]];
+console.log(myFriends[0]); // النتيجة: "Ahmed"
+console.log(myFriends[2]); // النتيجة: "Sayed"
+console.log(myFriends[1][2]); // النتيجة: "h"
+console.log(myFriends[3][1]); // النتيجة: "Ali"
+console.log(myFriends[3][1][2]); // النتيجة: "i"
+
+console.log(myFriends); // النتيجة: ["Ahmed", "Mohamed", "Sayed", ["Marwan", "Ali"]]
+myFriends[1] = "Gamal"; // تغيير قيمة العنصر في الموضع الثاني
+console.log(myFriends); // النتيجة: ["Ahmed", "Gamal", "Sayed", ["Marwan", "Ali"]]
+myFriends[3] = ["Sameh", "Ameer"]; // تغيير قيمة العنصر في الموضع الرابع
+console
+
+
+<pre><code>console.log(myFriends); // النتيجة: ["Ahmed", "Gamal", "Sayed", ["Sameh", "Ameer"]]
+
+console.log(Array.isArray(myFriends)); // النتيجة: true</code></pre>
+
+<h2>Array Methods [Adding And Removing]</h2>
+<pre><code>let myFriends = ["Ahmed", "Mohamed", "Sayed", "Alaa"];
+console.log(myFriends); // النتيجة: ["Ahmed", "Mohamed", "Sayed", "Alaa"]
+
+myFriends.unshift("Osama", "Nabil"); // إضافة عناصر للبداية
+console.log(myFriends); // النتيجة: ["Osama", "Nabil", "Ahmed", "Mohamed", "Sayed", "Alaa"]
+
+myFriends.push("Samah", "Eman"); // إضافة عناصر للنهاية
+console.log(myFriends); // النتيجة: ["Osama", "Nabil", "Ahmed", "Mohamed", "Sayed", "Alaa", "Samah", "Eman"]
+
+let first = myFriends.shift(); // حذف العنصر الأول من المصفوفة
+console.log("Removed element: " + first); // النتيجة: "Removed element: Osama"
+console.log(myFriends); // النتيجة: ["Nabil", "Ahmed", "Mohamed", "Sayed", "Alaa", "Samah", "Eman"]
+
+let last = myFriends.pop(); // حذف العنصر الأخير من المصفوفة
+console.log("Removed element: " + last); // النتيجة: "Removed element: Eman"
+console.log(myFriends); // النتيجة: ["Nabil", "Ahmed", "Mohamed", "Sayed", "Alaa", "Samah"]</code></pre>
+
+
+<h2>Arrays Methods - Length</h2>
+<pre><code>let myFriends = ["Ahmed", "Mohamed", "Sayed", "Alaa"];
+console.log(myFriends.length); // النتيجة: 4
+
+myFriends.length = 2; // تغيير طول المصفوفة
+console.log(myFriends); // النتيجة: ["Ahmed", "Mohamed"]
+
+myFriends.length = 5; // زيادة طول المصفوفة (قيم العناصر الإضافية ستصبح undefined)
+console.log(myFriends); // النتيجة: ["Ahmed", "Mohamed", undefined, undefined, undefined]</code></pre>
+<pre><code>console.log(myFriends);
+
+console.log(`First Name Is ${first}`);
+
+let last = myFriends.pop();
+
+console.log(myFriends);
+
+console.log(`Last Name Is ${last}`);
+
+// Unshift يصيف المنت في بداية المصفوفة
+// Push يضيف المنت في نهاية المصفوفة
+// Shift وظيفته عمل حذف المنت في بداية المصفوفة ويمكن تخزينه first
+// الpop عكس ال shift يعمل حذف المنت في نهاية المصفوفة ويمكن تخزينه last</code></pre>
+</article>
+
+<article>
+        <h2>البحث في المصفوفة</h2>
+        <pre><code>
+            /*
+
+                Arrays Methods [Search]
+                    - indexOf(Search Element, From Index [Opt])
+                    - lastIndexOf(Search Element, From Index [Opt])
+                    - includes(valueToFind, fromIndex [Opt]) [ES7]
+            */
+
+            let myFriends = ["Ahmed", "Mohamed", "Sayed", "Alaa", "Ahmed"];
+
+            console.log(myFriends);
+
+            console.log(myFriends.indexOf("Ahmed"));
+            console.log(myFriends.indexOf("Ahmed", 2));
+
+            console.log(myFriends.lastIndexOf("Ahmed"));
+            console.log(myFriends.lastIndexOf("Ahmed", -2));
+
+            console.log(myFriends.includes("Ahmed"));
+            console.log(myFriends.includes("Ahmed", 2));
+
+            if (myFriends.lastIndexOf("Osama") === -1) {
+                console.log("Not Found");
+            }
+        </code></pre>
+    </article>
+
+    <article>
+        <h2>مصفوفة ميثود sort و reverse</h2>
+        <pre><code>
+            /*
+
+                Arrays Methods [Sort]
+                    - sort(Function [Opt])
+                    - reverse
+            */
+
+            let myFriends = [10, "Sayed", "Mohamed", "90", 9000, 100, 20, "10", -20, -10];
+        </code></pre>
+    </article>
+
+    <article>
+        <h2>مثال لـ Array Methods Sort و reverse</h2>
+        <pre><code>
+            let numbers = [4, 2, 8, 5, 1, 3];
+
+            // ترتيب الأرقام بشكل تصاعدي
+            numbers.sort((a, b) => a - b);
+            console.log(numbers); // [1, 2, 3, 4, 5, 8]
+
+            // ترتيب الأرقام بشكل تنازلي
+            numbers.sort((a, b) => b - a);
+            console.log(numbers); // [8, 5, 4, 3, 2, 1]
+
+            // عكس ترتيب الأرقام
+            numbers.reverse();
+            console.log(numbers); // [1, 2, 3, 4, 5, 8]
+        </code></pre>
+    </article>
+
+    <article>
+        <h2>مصفوفة ميثود silce و splice</h2>
+        <pre><code>
+            /*
+
+                Arrays Methods [Slicing]
+                    - slice(Start [Opt], End [Opt] Not Including End)
+                        --- slice() => All Array
+                        --- If Start Is Undefined => 0
+                        --- Negative Count From End
+                        --- If End Is Undefined || > Indexes => Slice To The End Array.length
+                        --- Return New Array
+                    - splice(Start [Mand], DeleteCount [Opt] [0 No Remove], The Items To Add [Opt])
+                        --- If Negative => Start From The End
+            */
+
+            let myFriends = ["Ahmed", "Sayed", "Ali", "Osama", "Gamal", "Ameer"];
+
+            console.log(myFriends);
+
+            console.log(myFriends.slice());
+
+            console.log(myFriends.slice(1));
+
+            console.log(myFriends.slice(1, 3));
+
+            console.log(myFriends.slice(-3));
+
+            console.log(myFriends.slice(1, -2));
+
+            console.log(myFriends.slice(-4, -2));
+
+            console.log(myFriends);
+
+            myFriends.splice(1, 2, "Sameer", "Samara");
+
+            console.log(myFriends);
+        </code></pre>
+    </article>
+    <article>
+        <h2>مصفوفة splice:</h2>
+        <pre><code>
+            /*
+                تأخذ مصفوفة وتقوم بإضافة أو حذف عنصر في المصفوفة وتعود بالعناصر التي تم حذفها.
+            */
+
+            const fruits = ['apple', 'banana', 'orange', 'grape', 'kiwi'];
+
+            const removedFruits = fruits.splice(1, 2, 'pear', 'peach');
+
+            console.log(removedFruits); // ['banana', 'orange']
+
+            console.log(fruits); // ['apple', 'pear', 'peach', 'grape', 'kiwi']
+        </code></pre>
+    </article>
+
+ 
+  <article>
+    <pre><code>
+    <code>
+    let day = "A";
+
+    switch (day) {
+        default:
+            console.log("Unknown Day");
+            break;
+        case 0:
+            console.log("Saturday");
+            break;
+        case 1:
+            console.log("Sunday");
+            break;
+        case 2:
+        case 3:
+            console.log("Monday");
+            break;
+    }
+    </code>
+    </pre>
+  </article>
+
+  <article>
+    <h2>فهم واستخدام تعبير Switch Case في لغة الجافاسكريبت</h2>
+    <pre><code>
+    switch (expression) {
+        case value1:
+            // الكود الذي يتم تنفيذه عندما يكون الexpression يساوي value1
+            break;
+        case value2:
+            // الكود الذي يتم تنفيذه عندما يكون الexpression يساوي value2
+            break;
+        default:
+            // الكود الذي يتم تنفيذه عندما لا يتم الوصول لأي قيمة محددة
+            break;
+    }
+    </code></pre>
+  </article>
+
+  <article>
+    <h3>مثال توضيحي</h3>
+    <pre><code>
+    switch (percentage) {
+        case 90:
+            console.log("ممتاز");
+            break;
+        case 80:
+            console.log("جيد جدًا");
+            break;
+        case 70:
+            console.log("جيد");
+            break;
+        case 60:
+            console.log("مقبول");
+            break;
+        default:
+            console.log("راسب");
+            break;
+    }
+    </code></pre>
+  </article>
+  
+  
+  
+  <article>
+        <h2>Conditional Operator - كونديشنل اوبرتور</h2>
+        <pre><code>
+/*
+    Conditional (Ternary) Operator
+*/
+
+let theName = "Mona";
+let theGender = "Female";
+let theAge = 30;
+
+if (theGender === "Male") {
+    console.log("Mr");
+} else {
+    console.log("Mrs");
+}
+
+// Condition ? If True : If False
+theGender === "Male" ? console.log("Mr") : console.log("Mrs");
+
+let result = theGender === "Male" ? "Mr" : "Mrs";
+document.write(result);
+
+console.log(theGender === "Male" ? "Mr" : "Mrs");
+
+console.log(`Hello ${theGender === "Male" ? "Mr" : "Mrs"} ${theName}`);
+
+theAge < 20
+    ? console.log(20)
+    : theAge > 20 && theAge < 60
+    ? console.log("20 To 60")
+    : theAge > 60
+    ? console.log("Larger Than 60")
+    : console.log("Unknown");
+        </code></pre>
+        <p>
+            ال Conditional Operator أو ternary operator في JavaScript هو عبارة عن عامل تشغيلي يستخدم للتحقق من تعبير محدد
+            وإعطاء قيمة مختلفة اعتمادًا على ما إذا كان التعبير صحيحًا أم خاطئًا.
+            يأخذ هذا العامل ثلاثة عناصر:
+            الشرط الذي نريد التحقق منه.
+            القيمة التي تُعيد في حالة صحيحة للشرط.
+            القيمة التي تُعيد في حالة خاطئة للشرط.
+        </p>
+    </article>
+
+    <article>
+        <h2>Arrays Methods - Joining</h2>
+        <pre><code>
+/*
+    Arrays Methods [Joining]
+        - concat(array, array) => Return A New Array
+        - join(Separator)
+*/
+
+let myFriends = ["Ahmed", "Sayed", "Ali", "Osama", "Gamal", "Ameer"];
+let myNewFriends = ["Samar", "Sameh"];
+let schoolFriends = ["Haytham", "Shady"];
+
+let allFriends = myFriends.concat(
+    myNewFriends,
+    schoolFriends,
+    "Gameel",
+    [1, 2]
+);
+
+console.log(allFriends);
+console.log(allFriends.join());
+console.log(allFriends.join(""));
+console.log(allFriends.join(" @ "));
+console.log(allFriends.join("|"));
+console.log(allFriends.join("|").toUpperCase());
+        </code></pre>
+        <p>
+            تتيح دالة "join" في لغة الجافا اسكريبت دمج عناصر مصفوفة في سلسلة واحدة، حيث تأخذ المصفوفة كمدخل
+            وتقوم بإرجاع سلسلة متكونة من عناصر المصفوفة المفصولة بفاصلة (أو أي حرف آخر يتم تحديده).
+            الصيغة العامة لدالة "join" هي:
+            array.join(separator)
+            حيث:
+            array: المصفوفة التي سيتم دمج عناصرها في سلسلة.
+            separator: الفاصلة (أو أي حرف آخر يتم تحديده) الذي سيتم استخدامه لفصل العناصر المختلفة في السلسلة المرجعة.
+        </p>
+    </article>
+
+    <article>
+        <h2>Loop - For</h2>
+        <pre><code>
+/*
+    Loop
+        - For
+            for ([1] [2] [3]) {
+                Block Of Code
+            }
+*/
+
+for (let i = 0; i < 10; i++) {
+    console.log(i);
+}
+        </code></pre>
+        <p>
+            هذا الكود هو مثال بسيط لاستخدام حلقة التكرار "for" في لغة الجافا سكريبت.
+            حلقة التكرار "for" هي تقنية شائعة في البرمجة تستخدم لتكرار تنفيذ سلسلة من الأوامر عدة مرات،
+            وتسمح لنا بتحديد عدد المرات التي نريد تكرار الأوامر بها.
+            تتكون حلقة "for" من ثلاثة أجزاء:
+            [1] متغير يستخدم لتحديد قيمة بداية الحلقة (يتم تعيين قيمته قبل بدء التكرار).
+           
+[2] تعبير مشروط يحدد متى يتوقف التكرار (يتم تقييمه في كل مرة يتم فيها تنفيذ الحلقة).
+[3] تعبير يتم تنفيذه في كل مرة يتم فيها تنفيذ الحلقة.
+
+في الكود المعطى، تم استخدام حلقة "for" لتنفيذ الأمر console.log(i) عشر مرات، حيث تبدأ الحلقة من القيمة 0 وتستمر حتى تصل القيمة إلى 9 (أي أقل من 10)، وفي كل مرة يتم فيها تنفيذ الحلقة، يتم زيادة قيمة المتغير i بمقدار 1 باستخدام العبارة i++ التي تعني "زيادة i بمقدار 1".
+
+يتم طباعة القيم التي تم تخزينها في المتغير i في كل مرة يتم فيها تنفيذ الحلقة، باستخدام دالة console.log() التي تقوم بعرض النتيجة في وحدة التحكم. وبالتالي، يتم طباعة القيم من 0 إلى 9.
+
+</p>
+</article>
+<article>
+    <h2>Loop - Loop On Sequences</h2>
+    <pre><code>
+/*
+    Loop
+        - Loop On Sequences
+*/
+let myFriends = [1, 2, "Osama", "Ahmed", 3, 4, "Sayed", 6, "Ali"];
+let onlyNames = [];
+
+for (let i = 0; i < myFriends.length; i++) {
+if (typeof myFriends[i] === "string") {
+onlyNames.push(myFriends[i]);
+}
+}
+
+console.log(onlyNames);
+</code></pre>
+<p>
+هذا الكود يستخدم حلقة "for" للتكرار على جملة مصفوفة "myFriends" والبحث عن العناصر التي تحتوي على النصوص فقط.
+وفي كل مرة يتم فيها تنفيذ الحلقة، يتم التحقق مما إذا كان العنصر الحالي من النوع "string"، وإذا كان كذلك، يتم إضافة العنصر إلى مصفوفة جديدة تسمى "onlyNames" باستخدام الأمر "onlyNames.push(myFriends[i])".
+بمجرد الانتهاء من تنفيذ الحلقة، يتم عرض نتيجة الأسماء فقط باستخدام دالة "console.log()"، ويتم طباعة قيم المصفوفة "onlyNames" الذي يحتوي على العناصر التي تحتوي على النصوص فقط.
+</p>
+
+</article>
+<h2>Nested Loop</h2>
+  <article>
+        <pre>
+<code>
+
+
+        
+
+
+
+let products = ["Keyboard", "Mouse", "Pen", "Pad", "Monitor"];
+
+let colors = ["Red", "Green", "Black"];
+
+let models = [2020, 2021];
+
+
+for (let i = 0; i < products.length; i++) {
+
+    console.log("#".repeat(15));
+
+    console.log(`# ${products[i]}`);
+
+    console.log("#".repeat(15));
+
+    console.log("Colors: ");
+
+    for (let j = 0; j < colors.length; j++) {
+
+        console.log(`- ${colors[j]}`);
+
+    }
+
+    console.log("Models: ");
+
+    for (let k = 0; k < models.length; k++) {
+
+        console.log(`- ${models[k]}`);
+
+    }
+
+}
+</code>
+        </pre>
+    </article>
+    
+    
+    <article>
+        <h2>إضافة بروديكت في الصفحة</h2>
+        <pre><code>
+            /*
+                Products Practice
+            */
+
+            const products = ["Keyboard", "Mouse", "Speakers", "Mouse Pad", "Monitor", "iPhone"];
+            const colors = ["Red", "Green", "Blue"];
+            const showCount = 5;
+
+            document.write("<h2>Showing ${showCount} Products</h2>");
+
+            for (let i = 0; i < showCount; i++) {
+                document.write("<div>");
+                document.write("<h3>[" + (i + 1) + "] " + products[i] + "</h3>");
+                for (let j = 0; j < colors.length; j++) {
+                    document.write("<p>" + colors[j] + "</p>");
+                }
+                document.write("<p>" + colors.join(" || ") + "</p>");
+                document.write("</div>");
+                document.write("<hr />");
+            }
+        </code></pre>
+    </article>
+
+<article>
+  <h2>أمثلة عن Function</h2>
+  <p>في هذا المثال، قمنا بإنشاء دالة تقوم بطباعة رسالة ترحيبية:</p>
+  <pre><code>
+function رسالة_ترحيب(الاسم) {
+  console.log("أهلاً بك، " + الاسم + "!");
+}
+
+رسالة_ترحيب("جون"); // النتيجة: أهلاً بك، جون!
+        </code></pre>
+  <p>يمكننا استخدام الدوال لإنشاء كائنات تحتوي على معلومات متعددة:</p>
+  <pre><code>
+function إنشاء_شخص(الاسم, العمر, المهنة) {
+  return {
+    الاسم: الاسم,
+    العمر: العمر,
+    المهنة: المهنة,
+    قدم_نفسه: function() {
+      console.log("مرحبًا، اسمي " + this.الاسم + "، عمري " + this.العمر + " عامًا، وأعمل كـ" + this.المهنة + ".");
+    }
+  };
+}
+
+let شخص1 = إنشاء_شخص("جون", 25, "مطوِّر");
+let شخص2 = إنشاء_شخص("سارة", 30, "مصمّمة");
+
+شخص1.قدم_نفسه(); // النتيجة: مرحبًا، اسمي جون، عمري 25 عامًا، وأعمل كـمطوِّر.
+شخص2.قدم_نفسه(); // النتيجة: مرحبًا، اسمي سارة، عمري 30 عامًا، وأعمل كـمصمّمة.
+        </code></pre>
+  <h2>تُستخدم عبارة return في الدوال لإرجاع قيمة من الدالة إلى المكان الذي تم استدعاء الدالة منه:</h2>
+  <pre><code>
+function مجموع(الرقم1, الرقم2) {
+  return الرقم1 + الرقم2;
+}
+
+let النتيجة = مجموع(5, 7);
+console.log(النتيجة); // النتيجة: 12
+        </code></pre>
+  <h2>باستخدام rest parameter، يمكننا تمرير عدد غير محدود من الوسائط إلى الدالة:</h2>
+  <pre><code>
+function مجموع_الأرقام(...الأرقام) {
+  let المجموع = 0;
+  for (let i = 0; i < الأرقام.length; i++) {
+    المجموع += الأرقام[i];
+  }
+  console.log(المجموع);
+}
+
+مجموع_الأرقام(1, 2, 3); // النتيجة: 6
+مجموع_الأرقام(1, 2, 3, 4, 5); // النتيجة: 15
+        </code></pre>
+  <h2>تُعرف الدوال المجهولة بأنها دوال لا تحمل اسمًا ويتم استخدامها لتمرير دالة كمعامل لدالة أخرى أو لتنفيذ دالة فورًاAnonymous functions:</h2>
+  <pre><code>
+let جمع_الأرقام = function (أ, ب) {
+  return أ + ب;
+};
+
+console.log(جمع_الأرقام(2, 3)); // النتيجة: 5
+
+function حاسب(الرقم1, الرقم2, العملية) {
+  return العملية(الرقم1, الرقم2);
+}
+
+let النتيجة = حاسب(10, 5, function (أ, ب) {
+  return أ * ب;
+});
+
+console.log(النتيجة); // النتيجة: 50
+        </code></pre>
+  <p>تُوضّح هذه الأمثلة مختلف الجوانب والمفاهيم المتقدمة للدوال في لغة الجافا سكريبت.</p>
+</article>
+
+<h2>Return Nested Function
+</h2>
+<article>
+  <pre>
+        <code>
+
+تستخدم الدوال المتداخلة في الجافا سكريبت لإرجاع دالة من داخل دالة أخرى، ويمكن استخدام هذا النوع من الدوال للحفاظ على سرية بعض المتغيرات أو الدوال في الدالة الرئيسية.
+
+هنا مثال بسيط للدوال المتداخلة:
+
+function outerFunction() {
+    let outerVariable = "Hello, ";
+
+    function innerFunction(name) {
+        return outerVariable + name;
+    }
+
+    return innerFunction;
+}
+
+let greeting = outerFunction();
+console.log(greeting("John")); // Output: Hello, John
+</code>
+    </pre>
+</article>
+<h2>Arrow Function</h2>
+<article>
+  <pre>
+        <code>
+Arrow Function هي طريقة جديدة لتعريف واستخدام الدوال في JavaScript، والتي تم تقديمها في ES6.
+ويمكن الاستفادة منها إذا كانت ون استيك اي سطر واحد
+
+تميز Arrow Function عن الدوال التقليدية في الشكل البسيط والمختصر لتعريفها، حيث تستخدم الرمز "=>" للإشارة إلى الدالة، ولا يحتاج تعريفها إلى استخدام الكلمة الرئيسية "function".
+
+فيما يلي مثال عملي على استخدام Arrow Function:
+
+// تعريف دالة تقليدية باستخدام الكلمة الرئيسية function
+function multiply(a, b) {
+    return a * b;
+}
+
+// تعريف الدالة نفسها باستخدام Arrow Function
+const multiplyArrow = (a, b) => a * b;
+
+// استخدام الدالتين
+console.log(multiply(2, 3)); // سيظهر الناتج 6
+console.log(multiplyArrow(2, 3)); // سيظهر الناتج 6
+</code>
+    </pre>
+</article>
+<h2>Global And Local Scope</h2>
+<article>
+  <pre>
+        <code>
+
+
+في جافا سكريبت، الـ Scope هو المجال الذي يمكن للمتغيرات والدوال أن تكون متاحة فيه، وينقسم الـ Scope إلى نطاقين: Global Scope و Local Scope.
+
+Global Scope:
+هو المجال الذي تعرف فيه المتغيرات والدوال خارج الدوال والكائنات، وبالتالي يمكن الوصول إليها من أي مكان في الكود.
+
+Local Scope:
+هو المجال الذي تعرف فيه المتغيرات والدوال داخل الدوال أو الكائنات، وبالتالي لا يمكن الوصول إليها من خارج هذه الدوال أو الكائنات.
+
+في الشفرة التالية يوضح مثال بسيط لفهم Global و Local Scope:
+
+// تعريف المتغير العالمي
+let globalVariable = 5;
+
+function myFunction() {
+    // تعريف المتغير المحلي
+    let localVariable = 10;
+
+    console.log("globalVariable في myFunction: ", globalVariable); // سيظهر الناتج 5
+    console.log("localVariable في myFunction: ", localVariable); // سيظهر الناتج 10
+}
+
+myFunction();
+
+console.log("globalVariable في النطاق العالمي: ", globalVariable); // سيظهر الناتج 5
+console.log("localVariable في النطاق العالمي: ", localVariable); // سيظهر خطأ Uncaught ReferenceError
+</code>
+    </pre>
+</article>
+<h2>Scope
+- Block Scope [If, Switch, For]</h2>
+<article>
+    <pre>
+        <code>
+
+
+في جافا سكريبت، الـ Scope هو المجال الذي يمكن للمتغيرات والدوال أن تكون متاحة فيه، وينقسم الـ Scope إلى نطاقين: Global Scope و Local Scope.
+
+بالإضافة إلى الـ Global Scope و Local Scope، هناك مفهوم آخر في الـ Scope يسمى Block Scope. يشير Block Scope إلى المتغيرات التي يتم تعريفها داخل كتلة الشفرة، مثل If Statement و For Loop و Switch Statement.
+
+لنفترض أن لدينا مثالاً بسيطاً يستخدم If Statement لفحص قيمة المتغير، ويحتوي على متغير يتم تعريفه داخل If Statement، سيكون الكود كالتالي:
+
+if (true) {
+  let myVariable = "Hello";
+  console.log(myVariable); // سيظهر الناتج "Hello"
+}
+
+console.log(myVariable); // سيظهر خطأ Uncaught ReferenceError
+        </code>
+    </pre>
+</article>
+<h2>
+  Lexical Scope
+</h2>
+<article>
+    <pre>
+        <code>
+
+في جافا اسكريبت، الـ Scope هو المجال الذي يمكن للمتغيرات والدوال أن تكون متاحة فيه. وينقسم الـ Scope إلى نطاقين: Global Scope و Local Scope.
+
+أما عن Lexical Scope، فهو مفهوم يتعلق بالـ Scope الخاص بالدوال. ويشير Lexical Scope إلى الـ Scope الذي تم تعريف الدالة فيه، حيث يمكن للدالة الوصول إلى المتغيرات التي تم تعريفها في نفس النطاق الذي تم تعريف الدالة فيه.
+
+لنفترض أن لدينا مثالًا بسيطًا:
+
+let a = "Hello";
+
+function myFunction() {
+  console.log(a);
+}
+
+myFunction(); // سيظهر الناتج "Hello"
+        </code>
+    </pre>
+</article>
+
+<h2>function بعض خصائص ال</h2>
+<article>
+    <pre>
+        <code>
+خصائص الـ function في الجافا اسكريبت:
+
+1- يمكن تعريف الـ function بشكل عام كالتالي:
+
+function functionName(parameter1, parameter2, ...) {
+    // code to be executed
+}
+
+حيث يمكن إضافة معاملات (parameters) للـ function واستخدامها داخل الـ function.
+
+مثال:
+
+function greet(name) {
+    console.log("Hello " + name);
+}
+
+greet("John"); // Hello John
+
+2- يمكن إرجاع قيمة من الـ function باستخدام return statement.
+
+مثال:
+
+function add(a, b) {
+    return a + b;
+}
+
+console.log(add(2, 3)); // 5
+
+3- يمكن تعريف الـ function ك expression وتخزينها في متغير.
+
+مثال:
+
+var greet = function(name) {
+    console.log("Hello " + name);
+}
+
+greet("John"); // Hello John
+
+4- يمكن استخدام IIFE (Immediately Invoked Function Expression) لتنفيذ الـ function فور تعريفها.
+
+مثال:
+
+(function() {
+    console.log("I am an IIFE");
+})();
+// Output: I am an IIFE
+
+5- يمكن استخدام callback functions لتنفيذ الـ function بعد انتهاء عملية أخرى.
+
+مثال:
+
+function greet(name, callback) {
+    console.log("Hello " + name);
+    callback();
+}
+
+function sayGoodbye() {
+    console.log("Goodbye!");
+}
+
+greet("John", sayGoodbye);
+// Output: Hello John
+//         Goodbye!
+
+6- يمكن تعريف الـ function ك arrow function.
+
+مثال:
+
+const add = (a, b) => a + b;
+
+console.log(add(2, 3)); // 5
+
+7- يمكن استخدام default parameters لتحديد قيمة افتراضية للمعاملات.
+
+مثال:
+
+function greet(name = "World") {
+    console.log("Hello " + name);
+}
+
+greet(); // Hello World
+greet("John"); // Hello John
+        </code>
+    </pre>
+</article>
+
+<h2>Higher Order Functions map</h2>
+<article>
+    <pre>
+        <code>
+
+
+درس Higher Order Functions في جافا سكريبت يتعلق بالقدرة على استخدام الدوال كمتغيرات وتمريرها كوسائط لدوال أخرى. واحدة من الدوال العليا هي دالة "map" التي تستخدم لتحويل عناصر مصفوفة إلى عناصر جديدة بناءً على دالة تطبق على كل عنصر.
+
+لنفترض أن لدينا مصفوفة تحتوي على أعداد ونريد ضرب كل عنصر فيها في 2. بدلاً من استخدام حلقة لتحقيق ذلك، يمكننا استخدام دالة "map" لتنفيذ العملية بسهولة.
+
+فيما يلي مثال بسيط لاستخدام دالة "map" في جافا سكريبت:
+
+// تعريف المصفوفة
+var numbers = [1, 2, 3, 4, 5];
+
+// تعريف الدالة التي ستطبق على كل عنصر
+function multiplyByTwo(number) {
+    return number * 2;
+}
+
+// استخدام دالة map لتحويل الأعداد
+var multipliedNumbers = numbers.map(multiplyByTwo);
+
+// طباعة النتائج
+console.log(multipliedNumbers);
+
+في هذا المثال، قمنا بتعريف مصفوفة "numbers" تحتوي على الأعداد [1, 2, 3, 4, 5]. ثم قمنا بتعريف الدالة "multiplyByTwo" التي تأخذ عددًا وترجع ناتج ضربه في 2.
+
+ثم استخدمنا دالة "map" على المصفوفة "numbers" ومررنا إليها الدالة "multiplyByTwo". تقوم دالة "map" بتطبيق الدالة المعطاة على كل عنصر في المصفوفة وتخزين النتائج في مصفوفة جديدة تسمى "multipliedNumbers".
+
+أخيرًا، قمنا بطباعة مصفوفة "multipliedNumbers" والتي تحتوي على الأعداد المضاعفة.
+
+النتيجة المطبوعة ستكون: [2, 4, 6, 8, 10]، حيث تم ضرب كل عنصر في المصفوفة الأصلية.
+        </code>
+    </pre>
+</article>
+
+
+<h2>Higher Order Functions – Filter
+</h2>
+
+<article>
+    <pre>
+        <code>
+
+
+درس Higher Order Functions - Filter يعتبر من الدروس المهمة في لغة جافا سكريبت. تسمح لك هذه الوظيفة بتطبيق وظيفة معينة على مجموعة من العناصر وفقًا لشرط محدد، واسترجاع مجموعة جديدة تحتوي على العناصر التي تم تطبيق الشرط عليها.
+
+لفهم هذا الدرس بشكل أفضل، دعنا نأخذ مثالًا بسيطًا: لدينا مصفوفة تحتوي على أرقام، ونحن بحاجة إلى استرجاع جميع الأرقام التي تكون أكبر من 5. سنستخدم وظيفة filter لتنفيذ ذلك.
+
+في البداية، يمكننا إنشاء مصفوفة تحتوي على الأرقام المطلوبة. على سبيل المثال، لنفترض أن لدينا المصفوفة التالية:
+
+const numbers = [1, 2, 6, 8, 3, 7, 9, 4];
+
+الآن، سنقوم بتعريف وظيفة تسمى الشرط أو predicate. في حالتنا، سيكون الشرط هو أن العدد يجب أن يكون أكبر من 5. سنقوم بتعريف الشرط على النحو التالي:
+
+const condition = (number) => number > 5;
+
+الآن، بعد تحديد المصفوفة والشرط، سنستخدم وظيفة filter لتنفيذ الشرط على كل عنصر في المصفوفة واسترجاع المصفوفة الناتجة:
+
+const filteredNumbers = numbers.filter(condition);
+console.log(filteredNumbers);
+
+إذا قمت بتشغيل هذا الكود، ستحصل على النتيجة التالية في وحدة التحكم:
+
+[6, 8, 7, 9]
+
+المصفوفة الناتجة تحتوي على الأرقام 6، 8، 7، 9 فقط، وهي الأرقام التي تم تطبيق الشرط (أن تكون أكبر من 5) عليها.
+
+هكذا، تستخدم وظيفة filter لتطبيق شرط معين على مجموعة.
+        </code>
+    </pre>
+</article>
+
+<h2>Higher Order Functions - Reduce</h2>
+<article>
+    <pre>
+        <code>
+
+
+درس Higher Order Functions - Reduce هو درس مهم في لغة جافا سكريبت، حيث يتيح لك هذا الدرس تجميع عناصر مصفوفة إلى قيمة واحدة واحدة. يستخدم الدالة reduce لتنفيذ هذه العملية.
+
+لنفهم الدرس بشكل أفضل، دعنا نستخدم مثالًا بسيطًا. لنفترض أن لدينا مصفوفة تحتوي على أرقام ونريد حساب المجموع الإجمالي لجميع الأرقام في المصفوفة.
+
+لنبدأ بإنشاء المصفوفة. لنفترض أن لدينا المصفوفة التالية:
+
+const numbers = [1, 2, 3, 4, 5];
+
+الآن، سنستخدم وظيفة reduce لتجميع الأرقام في المصفوفة واسترجاع المجموع الإجمالي. سنستخدم دالة الاسترجاع (callback function) لتحديد العملية التي سيتم تطبيقها على الأرقام. في هذه الحالة، سنستخدم عملية الجمع.
+
+const sum = numbers.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+console.log(sum);
+
+تم استخدام القيمة الأولية 0 كمعامل ثاني لدالة reduce. القيمة الأولية هو القيمة التي ستتمتع بها المتغير المجمع (accumulator) في البداية. في هذه الحالة، سنبدأ بالجمع من القيمة 0.
+
+إذا قمت بتشغيل هذا الكود، ستحصل على النتيجة التالية في وحدة التحكم:
+
+15
+
+الناتج 15 هو المجموع الإجمالي لجميع الأرقام في المصفوفة.
+
+هذا هو مثال بسيط للدرس reduce في جافا سكريبت. يمكنك استخدام وظيفة reduce لتنفيذ العمليات الأخرى مثل الضرب أو إيجاد القيمة القصوى أو أي عملية أخرى تتطلب تجميع العناصر في مصفوفة إلى قيمة واحدة واحدة.
+        </code>
+    </pre>
+</article>
+<h2>forEach جافا اسكريبت</h2>
+<article>
+    <pre>
+        <code>
+
+
+
+ وظيفة تُستخدم لتنفيذ دالة معينة لكل عنصر في مصفوفة أو قائمة.
+
+هذا هو تعريف بسيط لاستخدام forEach:
+
+array.forEach(function(currentValue, index, array) {
+  // قم بتنفيذ العمليات المطلوبة على currentValue
+});
+
+توضح البارامترات التالية ما تمثله:
+
+currentValue: قيمة العنصر الحالي في المصفوفة أو القائمة.
+index: الفهرس (الموضع) الحالي للعنصر.
+array: المصفوفة أو القائمة التي تم تطبيق forEach عليها.
+
+الآن دعنا نرى مثالًا بسيطًا لكيفية استخدام forEach:
+
+let numbers = [1, 2, 3, 4, 5];
+
+numbers.forEach(function(number) {
+  console.log(number * 2);
+});
+
+في هذا المثال، يتم استخدام forEach لتكرار المصفوفة "numbers" وضرب كل عنصر فيها بمقدار 2. ستتم طباعة النتائج التالية:
+
+2
+4
+6
+8
+10
+
+يتم تنفيذ الدالة المرفقة بـ forEach لكل عنصر في المصفوفة وتمرير القيمة الحالية كمعامل للدالة. في هذا المثال، يتم ضرب كل عنصر في المصفوفة بمقدار 2 وتم طباعة النتائج.
+
+تمثل forEach طريقة سهلة ومرنة لتنفيذ إجراء على كل عنصر في مصفوفة أو قائمة بدون الحاجة إلى حلقات تكرار محددة.
+        </code>
+    </pre>
+</article>
+
+<article>
+    <h2>دالة getElementById في جافا سكريبت</h2>
+    <p>
+        في جافا سكريبت، يُستخدم الدالة <code>getElementById</code> للحصول على عنصر واجهة المستخدم في صفحة HTML باستخدام معرف (ID) العنصر.
+    </p>
+    <h2>تعريف دالة getElementById</h2>
+    <pre>
+        <code>
+document.getElementById(elementId);
+        </code>
+    </pre>
+    <p>
+        تأخذ الدالة <code>getElementById</code> واحدًا من البارامترات التالية:
+    </p>
+    <ul>
+        <li><code>elementId</code>: معرف العنصر (ID) الذي ترغب في الحصول عليه.</li>
+    </ul>
+
+    <h2>مثال بسيط</h2>
+    <p>
+        لنفترض أن لدينا صفحة HTML تحتوي على العناصر التالية:
+    </p>
+    <pre>
+        <code>
+&lt;h1 id="myHeading"&gt;مرحبا بك في صفحة الويب&lt;/h1&gt;
+&lt;p id="myParagraph"&gt;هذا هو فقرة نص توضيحي.&lt;/p&gt;
+        </code>
+    </pre>
+    <p>
+        يمكننا الآن استخدام دالة <code>getElementById</code> للحصول على قيمة عنصر العنوان والفقرة، وذلك باستخدام معرفاتهما:
+    </p>
+    <pre>
+        <code>
+let headingElement = document.getElementById("myHeading");
+let paragraphElement = document.getElementById("myParagraph");
+
+console.log(headingElement.textContent); // سيتم طباعة نص عنصر العنوان
+console.log(paragraphElement.textContent); // سيتم طباعة نص عنصر الفقرة
+        </code>
+    </pre>
+    <p>
+        في هذا المثال، يتم استخدام <code>getElementById</code> للحصول على العنصر المرتبط بمعرف "myHeading" وتخزينه في المتغير <code>headingElement</code>. ثم يتم استخدام <code>getElementById</code> مرة أخرى للحصول على العنصر المرتبط بمعرف "myParagraph" وتخزينه في المتغير <code>paragraphElement</code>. ثم يتم طباعة نص كل عنصر باستخدام خاصية <code>textContent</code>.
+    </p>
+    <p>
+        تُستخدم <code>getElementById</code> عادةً في جافا سكريبت للتعامل مع عناصر واجهة المستخدم وتعديلها أو الحصول على القيم المدخلة من المستخدم. يُعتبر العنصر الذي يتم استرجاعه من <code>getElementById</code> ككائن DOM ويمكن التلاعب به بحرية باستخدام خصائص وطرق أخرى من DOM.
+    </p>
+</article>
+
+
+
+<article>
+    <h2>DOMال </h2>
+    <p>DOM (Document Object Model):
+    DOM هو نموذج يُمثل هيكلة ومحتوى صفحة الويب ككائنات. يتيح لك الوصول إلى العناصر على الصفحة وتحريرها وتعديلها باستخدام JavaScript. يمكنك التفاعل مع العناصر النصية والصور والروابط والأحداث وغيرها الكثير.
+    فيما يلي مثال بسيط يوضح كيفية استخدام DOM للوصول إلى عنصر في الصفحة وتعديله:</p>
+    <pre><code>// استهداف العنصر باستخدام الـ id
+var heading = document.getElementById("myHeading");
+// تغيير نص العنصر
+heading.innerHTML = "مرحباً بك في العالم!";
+// استهداف الزر باستخدام الـ id
+var button = document.getElementById("myButton");
+// إضافة حدث النقر لتغيير العنوان
+button.addEventListener("click", function() { heading.innerHTML = "لقد قمت بالنقر!"; });
+</code></pre>
+    <p>forEach:
+    forEach هو أسلوب في JavaScript يُستخدم لتنفيذ وظيفة مُعينة لكل عنصر في مصفوفة أو قائمة. يعتبر forEach أحد أساليب العناصر الأكثر استخدامًا في برمجة JavaScript.
+    فيما يلي مثال يوضح كيفية استخدام forEach لتكرار عناصر المصفوفة وطباعتها:</p>
+    <pre><code>var numbers = [1, 2, 3, 4, 5];
+numbers.forEach(function(number) { console.log(number); });
+</code></pre>
+    <p>في هذا المثال، لدينا مصفوفة numbers التي تحتوي على أرقام. باستخدام forEach، نمر بكل عنصر في المصفوفة وننفذ وظيفة معينة عليه. في هذه الحالة، نقوم بطباعة كل عنصر في المصفوفة باستخدام console.log.
+    عند تشغيل هذا الكود، ستظهر الأرقام من 1 إلى 5 في وحدة التحكم.
+    يمكن استخدام forEach في العديد من السيناريوهات، مثل تعديل العناصر، أو حساب المجموع، أو إنشاء عناصر HTML إضافية وغيرها. إنه أداة قوية للتعامل مع المصفوفات والقوائم في JavaScript بطريقة مرنة ومنظمة.</p>
+  </article>
+
+
+  <article>
+    <h2>setime </h2>
+    <p>التأكيد (confirm):
+    يستخدم الكود التالي دالة confirm() لعرض رسالة تحتوي على خيارين "موافق" و "إلغاء" في نافذة تأكيد. إذا قام المستخدم بالنقر على "موافق"، سيتم عرض "تم حذف العنصر" في وحدة التحكم، وإلا سيتم عرض "لم يتم الحذف".
+    </p>
+    <pre><code>let confirmMsg = confirm("هل أنت متأكد؟");
+console.log(confirmMsg);
+if (confirmMsg === true) {
+    console.log("تم حذف العنصر");
+} else {
+    console.log("لم يتم الحذف");
+}</code></pre>
+
+    <p>الإدخال (prompt):
+    يستخدم الكود التالي دالة prompt() لعرض نافذة يطلب من المستخدم إدخال قيمة. سيتم حفظ القيمة التي يدخلها المستخدم في متغير promptMsg، وسيتم عرض "promptMsg" في وحدة التحكم.
+    </p>
+    <pre><code>let promptMsg = prompt("يوم الحجز؟");
+console.log(promptMsg);</code></pre>
+
+    <p>التأخير (setTimeout):
+    يستخدم الكود التالي دالة setTimeout() لتأخير تنفيذ وظيفة معينة بعد فترة زمنية محددة. في هذه الحالة، بعد مرور 3 ثوانٍ، سيتم عرض "رسالة" في وحدة التحكم.
+    </p>
+    <pre><code>setTimeout(function() {
+    console.log("رسالة");
+}, 3000);</code></pre>
+
+    <p>التأخير (setTimeout) مع دالة معينة:
+    يستخدم الكود التالي دالة setTimeout() مع دالة مسماة sayMsg لتنفيذ الدالة بعد مرور 3 ثوانٍ. سيتم عرض "رسالة" في وحدة التحكم.
+    </p>
+    <pre><code>setTimeout(sayMsg, 3000);
+function sayMsg() {
+    console.log("رسالة");
+}</code></pre>
+
+    <p>التأخير (setTimeout) مع دالة معينة ومعاملات:
+    يستخدم الكود التالي دالة setTimeout() مع دالة مسماة sayMsg ويمرر لها معاملات "سديق" و 27 لتنفيذ الدالة بعد مرور 3 ثوانٍ. سيتم عرض "رسالة لـ سديق، عمرك هو 27" في وحدة التحكم.
+    </p>
+    <pre><code>setTimeout(sayMsg, 3000, "سديق", 27);
+function sayMsg(user, age) {
+    console.log(`رسالة لـ ${user}، عمرك هو ${age}`);
+}</code></pre>
+
+    <p>إلغاء التأخير (clearTimeout):
+    يستخدم الكود التالي دالة setTimeout() مع دالة مسماة sayMsg ويمرر لها معاملات "سديق" و 27 لتنفيذ الدالة بعد مرور 3 ثوانٍ. سيتم عرض "رسالة لـ سديق، عمرك هو 27" في وحدة التحكم. ويمكن إلغاء التأخير باستخدام دالة clearTimeout عند النقر على زر.
+    </p>
+    <pre><code>setTimeout(sayMsg, 3000, "سديق", 27);
+function sayMsg(user, age) {console.log(`رسالة لـ ${user}، عمرك هو ${age}`);} 
+
+let btn = document.querySelectorAll("button ");
+btn.oneclick = function (){clearTimeout(1) ; };</code></pre>
+
+    <p>التكرار الدوري (setInterval):
+    يستخدم الكود
+html
+Copy code
+  <p>التكرار الدوري (setInterval):
+  يستخدم الكود التالي دالة setInterval() لتكرار تنفيذ وظيفة معينة بشكل متكرر بعد فترة زمنية محددة. في هذه الحالة، سيتم عرض "رسالة" بشكل متكرر كل 3 ثوانٍ في وحدة التحكم.
+  </p>
+  <pre><code>setInterval(sayMsg, 3000);
+function sayMsg() {
+    console.log("رسالة");
+}</code></pre>
+  </article>
+
+
+<h2> BoMال</h2>
+<article>
+    <pre><code>
+      
+            <h2>Browser Object Model (BOM)</h2> <br>
+            <h1>هو نموذج يقدمه المتصفح لتمثيل المستند المحمل ونوافذ المتصفح والعناصر المرتبطة بها ككائنات قابلة للتلاعب.<br> تعتبر واجهة BOM غير موحدة بين المتصفحات وتختلف في بعض النقاط، ولكن سوف أقدم لك العناصر الأكثر استخدامًا في BOM مع بعض الأمثلة.
+
+        <h1>1. Window Object:</strong>
+        الكائن Window يمثل نافذة المستعرض. يحتوي على العديد من الخصائص والطرق المفيدة مثل:
+        - alert(): عرض رسالة تنبيه للمستخدم.
+        - confirm(): عرض رسالة تأكيد للمستخدم.
+        - prompt(): عرض رسالة تطلب إدخال البيانات من المستخدم.
+
+        مثال:
+        <pre><code>
+          alert("مرحبًا!");
+          let result = confirm("هل أنت متأكد؟");
+          let name = prompt("ما اسمك؟");
+        </code></pre>
+
+        <strong>2. Document Object:</strong>
+        الكائن Document يمثل المستند المحمل في النافذة الحالية ويسمح بتلاعب العناصر الموجودة داخله. قد ترغب في استخدام العديد من خصائص وطرق الكائن Document مثل:
+        - getElementById(): استرجاع عنصر بناءً على الهوية.
+        - getElementsByTagName(): استرجاع مجموعة من العناصر استنادًا إلى علامة العنصر.
+        - querySelector(): استرجاع عنصر واحد يطابق المحدد CSS.
+
+        مثال:
+        <pre><code>
+          let titleElement = document.getElementById("title");
+          let paragraphs = document.getElementsByTagName("p");
+          let firstElement = document.querySelector(".container");
+        </code></pre>
+
+        <strong>3. Location Object:</strong>
+        الكائن Location يحتوي على معلومات حول عنوان URL الحالي ويسمح بالتلاعب به. يحتوي الكائن Location على العديد من الخصائص المفيدة مثل:
+        - href: يحتوي على العنوان الكامل للصفحة المحملة.
+        - hostname: يحتوي على اسم السيرفر.
+        - pathname: يحتوي على المسار النسبي للصفحة.
+
+        مثال:
+        <pre><code>
+          console.log(location.href);       // الناتج: https://example.com/
+          console.log(location.hostname);  // الناتج: example.com
+          console.log(location.pathname);  // الناتج: /index.html
+        </code></pre>
+
+        هذه هي بعض العناصر الأساسية في Browser Object Model (BOM) واستخداماتها. يتيح لنا BOM تطبيق الوظائف المتعلقة بالمتصفح والعمل مع النوافذ والمستندات والعناصر المتوفرة فيها. تذكر أن واجهة BOM قد تختلف بين المتصفحات، لذا يُفضل أن تتأكد من التوافق مع متصفحات مختلفة عند استخدام أي خاصية أو طريقة معينة.
+      </code></pre>
+  
+</code></pre>
+  </article>
+
+
+
+   <script src="main.js"></script>
+   <script>
+     function goBack() {
+       history.back();
+     }
+   </script>
+
+</body>
+</html>
