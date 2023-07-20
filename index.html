@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>الأكاديمية السودانية للتعليم برمجة الويب المفتوحة</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+  <style>
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-image: linear-gradient(to bottom, #333, #f3f3f3);
+}
+
+.header {
+  text-align: center;
+  padding: 20px;
+  background-image: linear-gradient(to bottom, #000, #f3f3f3);
+  background-attachment: fixed;
+  animation: gradientAnimation 15s linear infinite;
+  /* حركة دائمة للتدرج */
+}
+
+/* ستايلات الشعار */
+.logo {
+  width: 100px;
+  height: 100px;
+  background-color: #333;
+  border-radius: 50%;
+  position: relative;
+  box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.5); /* ظل مضئ */
+}
+
+#title {
+  font-size: 32px;
+  color: white;
+  /* لون الكتابة أبيض */
+  background-clip: text;
+  -webkit-background-clip: text;
+  /* للتوافق مع متصفحات Webkit مثل Chrome و Safari */
+  
+  /* سيظهر النص بلون الخلفية */
+}
+
+/* إنشاء حركة الشعاع المائل المستمر */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 0%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* الأنماط العامة للكروت */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.card {
+  width: 300px; /* حجم العرض الجديد للكروت */
+  height: 550px; /* حجم الارتفاع الجديد للكروت */
+  margin-bottom: 5px;
+  background-color: #fff;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* جعل المحتوى في وسط الكارد بشكل عمودي */
+  padding: 5px;
+  box-sizing: border-box; /* تأكد من عدم تجاوز الحاوية للهوامش الداخلية */
+  text-align: center; /* لتوسيط النصوص داخل الكارد */
+  margin-top:2px;
+
+}
+.card img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  /* يمكنك إضافة بعض الهوامش للصورة بحيث لا تكون محاذاة على حافة الكارد */
+  margin-top: 10px;
+}
+
+.card-content {
+  /* إضافة بعض الهوامش الداخلية للكارد-كونتينت */
+  padding: 10px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* جعل المحتوى في وسط الكارد بشكل عمودي */
+  justify-content: center;
+  /* جعل المحتوى في وسط الكارد بشكل أفقي */
+}
+
+h2 {
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+p {
+  font-size: 16px;
+  margin-bottom: auto;
+  line-height: 1.5;
+}
+
+.card-link {
+  
+top:0px;
+  bottom: 30px; /* يمكنك تعديل القيمة هنا لتحديد المسافة بين الزر والأسفل */
+  right: 20px; /* يمكنك تعديل القيمة هنا لتحديد المسافة بين الزر واليمين */
+  display: block;
+  text-align: center;
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.card-link:hover {
+  background-color: #555;
+}
+
+/* تعديل عرض الكروت على الشاشات الصغيرة */
+@media screen and (max-width: 768px) {
+  .card {
+    width: 100%;
+    /* كل كارد سيظهر في سطر واحد عند الشاشات الصغيرة */
+  }
+}
+
+/* تعديل عرض الكروت على الشاشات الكبيرة */
+@media screen and (min-width: 1200px) {
+  .card {
+    width: calc(25% - 20px); /* حجم العرض الجديد للكروت ليتسع 4 كروت في سطر واحد */
+  }
+}
+    .section {
+      flex: 0 0 calc(100% / 3); /* تظهر كل 3 أزرار في سطر واحد */
+      text-align: center;
+      padding: 20px;
+      background-color: #333;
+      border-radius: 8px;
+      margin: 5px;
+      transition: background-color 0.3s ease;
+      cursor: pointer;
+    }
+
+    .section a {
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .section:hover {
+      background-color: #555;
+    }
+
+    .section.active {
+      background-color: #777;
+    }
+
+    .slider {
+  width: 100%;
+  max-width: 1200px; /* تحديد العرض الأقصى للسلايدر */
+  overflow: hidden; /* لإخفاء الصور الزائدة */
+  margin: 0 auto; /* للتوسيط في الصفحة */
+}
+
+.slider img {
+  width: 100%;
+  height :200px;
+  display: none; /* لإخفاء الصورة في البداية */
+}
+
+.slider img.active {
+  display: block; /* عرض الصورة النشطة فقط */
+}
+/* ستايلات الفوتر */
+.footer {
+  background-image: linear-gradient(135deg, #000, #f3f3f3);
+  background-size: 300% 300%;
+  text-align: center;
+  padding: 20px 0;
+  color: #fff;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.footer p {
+  margin: 0;
+  padding: 5px 0;
+}
+
+.footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer ul li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.footer ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer ul li a:hover {
+  color: #bbb;
+}
+
+/* تنسيق العناصر داخل الفوتر */
+.footer p,
+.footer ul {
+  margin-bottom: 10px;
+}
+
+.footer ul li {
+  margin: 0 15px;
+}
+
+.footer ul li:first-child {
+  margin-left: 0;
+}
+
+.footer ul li:last-child {
+  margin-right: 0;
+}
+
+.footer ul li a {
+  padding: 5px 10px;
+  border: 1px solid #fff;
+  border-radius: 4px;
+}
+
+/* تنسيق الروابط على الشبكات الاجتماعية */
+.footer ul.social li a {
+  color: #fff;
+  background-color: #555;
+}
+
+.footer ul.social li a:hover {
+  background-color: #777;
+}
+
+/* إضافة حركة الشعاع المائل المستمر للفوتر أيضًا */
+.footer {
+  animation: gradientAnimation 15s linear infinite;
+}
+
+/* إنشاء حركة الشعاع المائل المستمر */
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 0%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.cardz {
+  max-width:80%;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+  text-align: center;
+  margin: center ;
+  margin-top:5px;
+  margin-left:6%;
+}
+
+.cardz h2 {
+  margin-bottom: 20px;
+}
+
+..cardz form {
+  display: flex;
+  flex-direction: column;
+}
+
+.cardz input {
+  width: 60%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.cardz button {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cardz button:hover {
+  background-color: #555;
+}
+
+.marquee {
+  white-space: nowrap; /* يجعل النص يظل في سطر واحد */
+  overflow: hidden; /* يخفي الجزء الزائد من النص المتحرك */
+  width: 100%; /* يجعل الشريط يمتد على عرض الشاشة بالكامل */
+  background-color: black;
+}
+span{
+  color: white;
+  font-style:bold;
+}
+
+#content {
+  display: inline-block;
+  padding-left: 100%; /* يبدأ النص عند نهاية المساحة المرئية */
+  animation: marquee 10s linear infinite; /* تحديد الحركة والزمن والتكرار */
+}
+
+@keyframes marquee {
+  0% { transform: translateX(10%); } /* يبدأ النص من الجهة اليمنى */
+  100% { transform: translateX(-100%); } /* ينتهي النص عند الجهة اليسرى */
+}
+
+
+  </style>
+
+<body>
+<div class="header">
+    <img src="/1689580686562logo.png" alt="شعار الموقع" class="logo">
+    <h1 id="title">
+      الأكاديمية السودانية المفتوحة للتعلم البرمجة وتطوير الويب </h1>
+  </div>
+  
+    <div class="slider">
+      <img src="/تعلم لغة css من الصفر حتى الاحتراف1).png" alt="صورة 1">
+      <img src="/Learn_HTML5.png" alt="صورة 2">
+      <img src="/1680047399090.jpg" alt="صورة 3">
+      <img src="/1679341332873.jpg" alt="صورة 4">
+    </div>
+    <div class="marquee">
+  <span id="content">  الأكاديمية السودانية المفتوحة للتعلم البرمجة وتطوير الويب </span>
+</div>
+    
+    
+  
+    <div class="container">
+    <div class="section"><a href="/html5.html">قسم HTML5</a></div>
+    <div class="section"><a href="/Css3 .html">قسم CSS</a></div>
+        <div class="section"><a href=" .html"> كتب ومراجع برمجية</a></div>
+
+    <div class="section"><a href="/problem-solving.html">قسم حل المشكلات</a></div>
+    <div class="section"><a href="/home.html">منتدى الحوار المباشر</a></div>
+    <div class="section"><a href="/contact-us.html">قسم تواصل معنا</a></div>
+    <div class="section"><a href="/about-us.html">قسم معلومات عنا</a></div>
+    <div class="section"><a href="/applications.html">قسم التطبيقات</a></div>
+    
+  </div>
+  
+       <div class="container">
+<div class="card">
+ <img src="/file_type_html_icon_130541.png" alt=" html5">
+      <div class="card-content">
+        <h2>
+        تعلم HTML5</h2>
+        <p> قم بتطوير صفحات الويب باستخدام أحدث تقنيات HTML
+
+</p>
+        <a href="/html5.html" class="card-link">الدخول للتصفح</a>
+      </div>
+    </div>
+    <div class="card">
+      <img src="/4202020css3htmllogosocialsocialmedia-115668_115633.png" alt=" css3 ">
+      <div class="card-content">
+        <h2>   تعلم CSS3  </h2>
+        <p>قم بتنسيق صفحات الويب وجعلها جميلة باستخدام CSS</p>
+        <a href="/Css3 .html" class="card-link">الدخول للتصفح</a>
+      </div>
+    </div>
+    <div class="card">
+      <img src="/javascript_logo_icon_247978.png" alt="javascript ">
+      <div class="card-content">
+        <h2> المستوى الاول JavaScript  </h2>
+        <p>قم بإضافة تفاعلية إلى صفحات الويب باستخدام لغة JavaScript. </p>
+        <a href="/Javascriptone.html" class="card-link">الدخول للتصفح</a>
+      </div>
+    </div>
+    </div>
+  
+  
+
+
+  <div class="container">
+<div class="card">
+ <img src="/javascript_original_logo_icon_146455.png" alt="كرت HTML5">
+      <div class="card-content">
+        <h2>المستوى الثاني javascript</h2>
+        <p>قم بتطوير صفحات الويب باستخدام أحدث تقنيات HTML.</p>
+        <a href="/Jslevel2.html" class="card-link">الدخول للتصفح</a>
+      </div>
+    </div>
+    <div class="card">
+      <img src="/javascript_vertical_logo_icon_168606.png" alt="كرت CSS3">
+      <div class="card-content">
+        <h2> المستوى الثالث javascript </h2>
+        <p>قم بتنسيق صفحات الويب وجعلها جميلة باستخدام CSS.</p>
+        <a href="css3.html" class="card-link">الدخول للتصفح</a>
+      </div>
+    </div>
+    <div class="card">
+      <img src="/github_original_wordmark_logo_icon_146506.png" alt="كرت GitHub ">
+      <div class="card-content">
+        <h2> شرح شامل GitHub </h2>
+        <p>    شرح شامل لطريقة الاستخدام ورفع المشروع علي    GitHub .</p>
+        <a href="/Githup.html" class="card-link">الدخول للتصفح</a>
+      </div>
+    </div>
+    </div>
+    
+    
+      <div class="container">
+<div class="card">
+ <img src="/nodejs_original_wordmark_logo_icon_146412.png" alt=" nodejs">
+      <div class="card-content">
+        <h2>
+        node.js</h2>
+        <p> javascript هو بيئة تشغيل مبنية علي
+        تسمح لك بتشغيل البرامج وإنشاء التطبيقات على الخوادم.
+
+</p>
+        <a href="/Jslevel2.html" class="card-link">الدخول للتصفح</a>
+      </div>
+    </div>
+    <div class="card">
+      <img src="/vuejs_original_wordmark_logo_icon_146305.png" alt=" vuejs">
+      <div class="card-content">
+        <h2>  Vue JS  </h2>
+        <p>Vue.js هو إطار عمل جافا سكريبت يستخدم لبناء واجهات المستخدم الديناميكية. يتميز بأنه سهل التعلم والاستخدام. </p>
+        <a href="css3.html" class="card-link">الدخول للتصفح</a>
+      </div>
+    </div>
+    <div class="card">
+      <img src="/mongodb_original_wordmark_logo_icon_146425.png" alt="mongo  ">
+      <div class="card-content">
+        <h2> mongo DB  </h2>
+        <p>MongoDB هو نظام قاعدة بيانات غير علائقية وتوزيعية يعتمد على التخزين بتنسيق JSON-like documents ويتميز بمرونة التطوير والتكامل السلس مع التطبيقات. </p>
+        <a href="/Githup.html" class="card-link">الدخول للتصفح</a>
+      </div>
+    </div>
+    </div>
+    <div class="container2">
+      <div class="cardz login-cardz">
+        <h2>تسجيل الدخول</h2>
+        <input type="text" placeholder="اسم المستخدم">
+        <input type="password" placeholder="كلمة المرور">
+        <br>
+        <button type="submit">تسجيل الدخول</button>
+      </div>
+
+      <div class="cardz signup-card">
+        <h2>إنشاء حساب جديد</h2>
+        <input type="text" placeholder="اسم المستخدم">
+        <input type="email" placeholder="البريد الإلكتروني">
+        <input type="password" placeholder="كلمة المرور">
+        <br>
+        <button type="submit">إنشاء الحساب</button>
+      </div>
+    </div>
+
+
+  <script src="main.js"></script>
+  <script>
+// script.js
+document.addEventListener('DOMContentLoaded', function() {
+  const images = document.querySelectorAll('.slider img');
+  let currentIndex = 0;
+
+  function showImage(index) {
+    images.forEach((image, idx) => {
+      if (idx === index) {
+        image.classList.add('active');
+      } else {
+        image.classList.remove('active');
+      }
+    });
+  }
+
+  function nextImage() {
+    currentIndex = (currentIndex + 1) % images.length;
+    showImage(currentIndex);
+  }
+
+  function prevImage() {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    showImage(currentIndex);
+  }
+
+  setInterval(nextImage, 3000); // يتم تبديل الصورة كل 3 ثواني (يمكن تعديل هذا الرقم)
+});
+//تسجيل الدخول وتسجيل حساب
+// عند النقر على زر تسجيل الدخول
+document.getElementById('loginBtn').addEventListener('click', function() {
+  // قم بإخفاء بطاقة إنشاء حساب
+  document.querySelector('.signup-card').style.display = 'none';
+  // قم بإظهار بطاقة تسجيل الدخول
+  document.querySelector('.login-cardz').style.display = 'block';
+});
+
+// عند النقر على زر إنشاء الحساب
+document.getElementById('signupBtn').addEventListener('click', function() {
+  // قم بإخفاء بطاقة تسجيل الدخول
+  document.querySelector('.login-cardz').style.display = 'none';
+  // قم بإظهار بطاقة إنشاء حساب
+  document.querySelector('.signup-card').style.display = 'block';
+});
+
+
+
+  </script>
+  
+  
+  
+</body>
+</div>
+</div>
+<footer class="footer">
+    <p>جميع الحقوق محفوظة &copy; 2023</p>
+    <ul>
+      <li><a href="#">الصفحة الرئيسية</a></li>
+      <li><a href="#">من نحن</a></li>
+      <li><a href="#">الخدمات</a></li>
+      <li><a href="#">اتصل بنا</a></li>
+    </ul>
+    <p>تابعنا على الشبكات الاجتماعية:</p>
+    <ul>
+      <li><a href="#" target="_blank">فيسبوك</a></li>
+      <li><a href="#" target="_blank">تويتر</a></li>
+      <li><a href="#" target="_blank">إنستجرام</a></li>
+    </ul>
+    <p>العنوان: العنوان الخاص بك, المدينة, البلد</p>
+    <p>الهاتف: +123456789</p>
+    <p>البريد الإلكتروني: info@example.com</p>
+  </footer>
+  
+</html>
