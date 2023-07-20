@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Git مقالة</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        article {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: red;
+        }
+        h2 {
+            text-align: center;
+            color: blue;
+        }
+        pre {
+            background-color: #f5f5f5;
+            padding: 10px;
+            overflow-x: auto;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            white-space: pre-wrap;
+        }
+            code {
+              color: green;
+            }
+        ol {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+
+        @media screen and (max-width: 768px) {
+            /* تنسيق العنوان والكتابة الشفرة في شاشات الأحجام الصغيرة */
+            h1 {
+                font-size: 24px;
+            }
+            pre {
+                font-size: 14px;
+            }
+        }
+
+        /* إضافة جماليات إضافية */
+        body {
+            background-color: #f8f8f8;
+            padding: 20px;
+        }
+        article {
+            background-color: #fff;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+        ol {
+            list-style: decimal;
+        }
+        li::marker {
+            color: #3498db;
+        }
+button {
+  position: fixed;
+    top: 15px;
+    right: 10px;
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+
+    </style>
+</head>
+<body>
+  <button onclick="goBack()">رجوع</button>
+    <article>
+        <h1>Git نظام تحكم في الإصدارات</h1>
+        <p>
+            الـ Git هو نظام تحكم في الإصدارات يستخدم لتتبع التغييرات التي تطرأ على ملفات المشروع عبر الوقت.
+            يعتبر Git أداة قوية تتيح للمطورين التعاون في العمل وإدارة الإصدارات بشكل فعال.
+        </p>
+        <h2> GitHub part 1 </h2>
+        <ol>
+            <li>
+                تثبيت Git: قم بتثبيت Git على جهاز الكمبيوتر الخاص بك من خلال تنزيله من الموقع الرسمي لـ Git
+                (<a href="https://git-scm.com/downloads" target="_blank">https://git-scm.com/downloads</a>).
+                بعد التثبيت، يمكنك فتح تطبيق السطر الأوامر أو Git Bash لإجراء العمليات المطلوبة.
+            </li>
+            <li>
+                إنشاء مستودع (Repository): قم بإنشاء مستودع Git جديد لمشروعك. يمكنك القيام بذلك عن طريق فتح مجلد جديد على جهازك وتشغيل الأمر git init لتهيئة المجلد كمستودع Git.
+            </li>
+            <li>
+                إضافة الملفات: بعد إنشاء المستودع، قم بإضافة الملفات التي ترغب في تتبعها عن طريق استخدام الأمر git add.
+                يمكنك إضافة ملف واحد بواحد أو جميع الملفات الموجودة في المجلد باستخدام git add ..
+            </li>
+            <li>
+                إجراء تعديلات: بمجرد إضافة الملفات، يمكنك تعديلها بحرية. عندما تنتهي من تعديلاتك، يمكنك استخدام الأمر git status لمراجعة التغييرات التي تم إجراؤها.
+            </li>
+            <li>
+                إنشاء نسخة احتياطية (Commit): بعد الانتهاء من التعديلات والتأكد من أن كل التغييرات الضرورية تمت إضافتها،
+                قم بإجراء عملية الـ Commit لحفظ هذه التغييرات.
+                استخدم الأمر git commit -m "رسالة الـCommit" لإنشاء نسخة احتياطية ووصف التغييرات التي تمت.
+            </li>
+            <li>
+                التعاون والتحديثات: يمكنك تحميل مشروعك إلى مستودع Git على خدمة استضافة مثل GitHub أو GitLab للتعاون مع الفريق.
+                يمكن لأعضاء الفريق تنزيل المشروع وإجراء تعديلاتهم وإرسال التحديثات التي يمكنك دمجها في مشروعك بسهولة.
+            </li>
+        </ol>
+        <pre><code>
+# Examlpe code for initializing a git repository
+git init
+
+# Add files to staging area
+git add .
+
+# Commit the changes
+git commit -m "Initial commit"
+        </code></pre>
+    </article>
+    
+    <article>
+        
+        <h2> GitHub part2  </h2>
+        <ol>
+            <!-- الأقسام السابقة من الشرح -->
+            <!-- ... -->
+
+            <li>
+                استعراض التاريخ (Log): يمكنك استخدام أمر git log لعرض سجل التغييرات في مشروعك.
+                ستشاهد تفاصيل الـ Commits التي تمت، بما في ذلك رسالة الـ Commit والمؤلف والتاريخ.
+            </li>
+            <li>
+                الانتقال بين الفروع (Branches): الفروع هي نسخ من المشروع الأساسي تسمح لك بعمل تجارب مستقلة على التغييرات.
+                يمكنك إنشاء فرع جديد باستخدام الأمر git branch &lt;اسم الفرع&gt; والتنقل بين الفروع باستخدام الأمر git checkout &lt;اسم الفرع&gt;.
+            </li>
+            <li>
+                الدمج (Merge): عندما تكون راضيًا عن التغييرات على فرع معين وترغب في دمجها مع الفرع الرئيسي،
+                يمكنك استخدام الأمر git merge &lt;اسم الفرع&gt; لدمج التغييرات.
+            </li>
+            <li>
+                حل التعارضات (Resolving Conflicts): في بعض الأحيان قد يحدث تعارض بين التغييرات المختلفة في الفروع المختلفة.
+                لحل هذه التعارضات، يمكنك استخدام أدوات دمج مثل محرر النصوص المفضل لديك لتعديل الملفات وحل التعارضات يدويًا.
+            </li>
+            <li>
+                الانتقال إلى تعيين سابق (Checkout): يمكنك استخدام الأمر git checkout &lt;commit_id&gt;
+                للانتقال إلى حالة معينة في التاريخ وعرض حالة المشروع في تلك الفترة.
+            </li>
+            <li>
+                رفع التغييرات (Push): بعد الانتهاء من إجراء التغييرات اللازمة في مشروعك على الفرع الحالي،
+                يمكنك رفع (Push) هذه التغييرات إلى مستودع Git على خدمة الاستضافة (مثل GitHub أو GitLab)
+                باستخدام الأمر git push.
+            </li>
+            <li>
+                سحب التحديثات (Pull): إذا كان لديك فروع متعددة من مشروعك وترغب في تحديث فرعك المحلي بالتحديثات الأخيرة من الفرع الرئيسي،
+                يمكنك استخدام الأمر git pull لجلب التحديثات الجديدة ودمجها مع فرعك المحلي.
+            </li>
+        </ol>
+        <pre><code>
+# Example code for git log, git branch, git merge, git checkout, git push, and git pull
+git log
+git branch new_feature_branch
+git checkout new_feature_branch
+git merge main_branch
+git checkout main_branch
+git push origin main_branch
+git pull origin main_branch
+        </code></pre>
+    </article>
+    
+    <article>
+        
+        <h2>GitHub رفع مشروع على  </h2>
+        <ol>
+            <!-- الأقسام السابقة من الشرح -->
+            <!-- ... -->
+
+            <li>
+                طريقة رفع مشروعك على GitHub:
+                <ol>
+                    <li>
+                        إنشاء حساب GitHub: قم بإنشاء حساب على GitHub إذا كنت لا تملك حسابًا بالفعل، قم بتسجيل الدخول إليه.
+                    </li>
+                    <li>
+                        إنشاء مستودع (Repository): قم بإنشاء مستودع جديد على GitHub.
+                        يمكنك تسميته على أنه اسم مشروعك واختيار الإعدادات المناسبة.
+                    </li>
+                    <li>
+                        توصيل المشروع بالمستودع: افتح موجه الأوامر (Command line) أو Git Bash وانتقل إلى دليل مشروعك المحلي.
+                        ثم قم بتنفيذ الأوامر التالية لتهيئة المشروع للعمل مع GitHub:
+                        <pre><code>
+# Initialize the local repository
+git init
+
+# Add files to the staging area
+git add .
+
+# Commit the changes
+git commit -m "Initial commit"
+                        </code></pre>
+                    </li>
+                    <li>
+                        ربط المشروع المحلي بالمستودع البعيد: استخدم الأمر التالي لربط المشروع المحلي بمستودع GitHub البعيد:
+                        <pre><code>
+git remote add origin &lt;repository-url&gt;
+                        </code></pre>
+                        حيث <code>&lt;repository-url&gt;</code> هو رابط URL لمستودع GitHub الذي قمت بإنشائه.
+                    </li>
+                    <li>
+                        رفع المشروع إلى GitHub: استخدم الأمر التالي لرفع مشروعك إلى GitHub:
+                        <pre><code>
+git push -u origin master
+                        </code></pre>
+                        سيتم رفع المشروع إلى GitHub ويرتبط مع المستودع الخاص بك.
+                    </li>
+                </ol>
+            </li>
+        </ol>
+    </article>
+
+   <script src="main.js"></script>
+   <script>
+     function goBack() {
+       history.back();
+     }
+   </script>
+</body>
+</html>
