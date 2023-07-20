@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3: شرح</title>
+    <style>
+            /* Reset CSS */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    /* Main styles */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f1f1f1;
+      padding: 20px;
+      background-color:white;
+    }
+    
+    .article {
+      max-width: 800px;
+      background-color: #fff;
+      padding: 20px;
+      margin: 0 auto;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    }
+    
+    h1 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    
+    h2 {
+      font-size: 20px;
+      margin-bottom: 10px;
+      text-align:center ;
+      color:blue;
+    }
+    
+    p {
+      font-size: 16px;
+      line-height: 1.5;
+      margin-bottom: 20px;
+      text-align :center ;
+      color:black;
+    }
+    
+    pre {
+      background-color: #f5f5f5;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    
+    code {
+      color: green;
+    }
+    h1{
+      text-align:center;
+      color:red;
+      
+    }
+    button {
+  position: fixed;
+    top: 15px;
+    right: 10px;
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+    </style>
+</head>
+<body>
+  <button onclick="goBack()">رجوع</button>
+
+    <article>
+        <h1>CSS3: تعلم أحدث تحديثات ورق الأنماط للويب</h1>
+        <p>في CSS3 تم إضافة العديد من المحددات (selectors) الجديدة التي تساعد في تحديد العناصر بشكل أكثر دقة. بعض الأمثلة على المحددات الجديدة هي nth-child و nth-of-type والتي تستخدم لاختيار عنصر معين في نسل العنصر الأصلي.</p>
+
+        <pre><code>
+ul li:nth-child(odd) {
+  background-color: lightgray;
+}
+        </code></pre>
+
+        <p>هذا الكود يقوم باختيار كل عنصر فردي في عناصر القائمة (li) داخل العنصر (ul) ويعطيه خلفية رمادية فاتحة.</p>
+
+        <h2>الخاصية Box Model (نموذج المربع):</h2>
+        <p>هذه الخاصية تُمكنك من تحديد حجم وتنسيق العناصر. تحتوي على عناصر مثل width و height و margin و padding.</p>
+
+        <pre><code>
+div {
+  width: 300px;
+  height: 200px;
+  margin: 20px;
+  padding: 10px;
+  background-color: lightblue;
+}
+        </code></pre>
+
+        <p>هذا الكود يحدد عرض وارتفاع العنصر (div) إلى 300 بكسل و 200 بكسل على التوالي ويضيف هوامش قيمتها 20 بكسل وحواف داخلية قيمتها 10 بكسل، ويعطي العنصر خلفية لونها أزرق فاتح.</p>
+
+        <h2>الخاصية Transitions (الانتقالات):</h2>
+        <p>تسمح لك خاصية Transitions بتعريف تأثيرات الانتقال السلسة بين مراحل مختلفة لعناصر HTML.</p>
+
+
+
+
+
+
+    <pre><code>
+button {
+background-color: blue;
+color: white;
+transition: background-color 0.5s ease;
+}
+button:hover {
+background-color: red;
+}
+</code></pre>
+
+
+    <p>هذا الكود يحدد أن لون خلفية الزر سيتغير من الأزرق إلى الأحمر عند تحويل المؤشر عليه بسرعة 0.5 ثانية.</p>
+</article>
+<article>
+        
+        <h2>الخاصية Flexbox (صندوق المرونة):</h2>
+        <p>تتيح لك ترتيب وتنسيق العناصر داخل العنصر الأب بشكل مرن ومناسب لعرض الصفحة على مختلف الأجهزة.</p>
+
+        <pre><code>
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+        </code></pre>
+
+        <p>هذا الكود يضع العناصر داخل العنصر (container) بترتيب مرن، مع توزيع المساحة بين العناصر بشكل متساوٍ.</p>
+
+        <h2>الخاصية Animations (التحريكات):</h2>
+        <p>تسمح لك بإنشاء تحريكات للعناصر باستخدام سلاسة وتوقيت محدد.</p>
+
+        <pre><code>
+@keyframes slide {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(100px);
+  }
+}
+
+.element {
+  animation-name: slide;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+        </code></pre>
+
+        <p>هذا الكود ينشئ تحريكًا للعنصر (element)، حيث يتحرك باتجاه الأسفل بمقدار 100 بكسل، وتستمر مدة الحركة لمدة 2 ثانية بشكل مستمر.</p>
+
+        <h2>الخاصية Media Queries (استعلامات الوسائط):</h2>
+        <p>تتيح لك ضبط تنسيقات العناصر بناءً على خصائص الشاشة المختلفة مثل العرض والارتفاع.</p>
+
+        <pre><code>
+@media (max-width: 600px) {
+  body {
+    background-color: lightgray;
+  }
+}
+        </code></pre>
+
+        <p>هذا الكود يقوم بتغيير لون خلفية الصفحة إلى رمادي فاتح عندما يكون عرض الشاشة أصغر من 600 بكسل.</p>
+    </article>
+    
+    <article>
+        
+        <h2>الخاصية Transitions (الانتقالات):</h2>
+        <p>تُسمح لك بإضافة تأثيرات انتقال سلسة للعناصر عند حصول تغيير في خصائصها مثل اللون والحجم والشفافية.</p>
+
+        <pre><code>
+.element {
+  transition-property: background-color;
+  transition-duration: 1s;
+}
+
+.element:hover {
+  background-color: blue;
+}
+        </code></pre>
+
+        <p>هذا الكود يتيح تحوّل لون العنصر (element) إلى اللون الأزرق بشكل سلس عند تحويل المؤشر فوقه.</p>
+
+        <h2>الخاصية Grid (الشبكة):</h2>
+        <p>تتيح لك إنشاء تخطيطات مرنة ومتعددة الأعمدة والصفوف بسهولة وفاعلية.</p>
+
+        <pre><code>
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+}
+
+.item {
+  background-color: gray;
+}
+        </code></pre>
+
+        <p>هذا الكود ينشئ تخطيطًا شبكيًا مكونًا من صفين، حيث تكون العناصر (item) بلون رمادي وتفصل بمسافة 20 بكسل بينها.</p>
+
+        <h2>الخاصية Variables (المتغيرات):</h2>
+        <p>تُسمح لك بتعريف متغيرات واستخدامها في مختلف الخصائص الأخرى، مما يُسهِّل إعادة استخدام القيم وتحديثها بسهولة.</p>
+
+        <pre><code>
+:root {
+  --main-color: blue;
+  --secondary-color: yellow;
+}
+
+.element {
+  background-color: var(--main-color);
+  color: var(--secondary-color);
+}
+        </code></pre>
+
+        <p>هذا الكود يعرِّف المتغيرات --main-color و--secondary-color ويُستخدم في العنصر (element) لتطبيق لونين مختلفين في الخلفية والنص.</p>
+    </article>
+    <article>
+        
+        <h2>الخاصية Box Shadow (الظلال):</h2>
+        <p>تُمكنك من إضافة ظلال للعناصر لإضفاء أبعاد ثلاثية عليها وتحسين مظهرها.</p>
+
+        <pre><code>
+.element {
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+        </code></pre>
+
+        <p>هذا الكود يُنشئ ظلالًا للعنصر (element) بعرض 2 بكسل وارتفاع 2 بكسل وعمق 4 بكسل بلون أسود ذو انعكاسية 0.2.</p>
+
+        <h2>الخاصية Flexbox (المرونة):</h2>
+        <p>تُمكِّنك من إنشاء تخطيطات مرنة وسهلة التنظيم للعناصر داخل العناصر الأساسية.</p>
+
+        <pre><code>
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.item {
+  flex: 1;
+}
+        </code></pre>
+
+        <p>هذا الكود يُنشئ تخطيطًا مرنًا للعناصر باتجاه أفقي، حيث تكون المسافة بينها متساوية وتمتد عبر المساحة المتاحة بالتساوي.</p>
+
+        <h2>الخاصية Animations (الحركات):</h2>
+        <p>تُسمح لك بإضافة حركات وتأثيرات متحركة للعناصر، مثل التحرك والتدوير والتحجيم.</p>
+
+        <pre><code>
+.element {
+  animation-name: slide-in;
+  animation-duration: 2s;
+}
+
+
+
+@keyframes slide-in {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+        </code></pre>
+
+        <p>هذا الكود يُنشئ حركة للعنصر (element) يتحرك في الأفق ببداية من اليسار (-100%) إلى الوسط (0) خلال 2 ثانية.</p>
+    </article>
+
+<article>
+        
+        
+        <h2>13. الخاصية Transform:</h2>
+        <p>تستخدم لتعديل الشكل والموقع والحجم والزاوية للعناصر في صفحة الويب.</p>
+        <pre><code>
+.element {
+  transform: rotate(45deg);
+}
+        </code></pre>
+        <p>هذا الكود يدوّر العنصر (element) بزاوية 45 درجة.</p>
+
+        <h2>14. الخاصية Transition:</h2>
+        <p>تستخدم لإضافة تأثيرات انتقال سلسة للعناصر عند تغيير حالتها أو عند مرور المؤشر عليها.</p>
+        <pre><code>
+.element {
+  transition: background-color 0.3s ease-in-out;
+}
+
+.element:hover {
+  background-color: blue;
+}
+        </code></pre>
+        <p>هذا الكود يُنشئ تأثيرًا انتقاليًا للعنصر (element) عند تغيير لون الخلفية، حيث يستغرق الانتقال 0.3 ثانية بتصفيف سهل الانتقال.</p>
+
+        <h2>15. الخاصية Grid:</h2>
+        <p>تتيح لك إنشاء تخطيطات شبكية مُرنة لتنظيم العناصر ثنائية الأبعاد (مثل الجداول) في صفحة الويب.</p>
+        <pre><code>
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+}
+        </code></pre>
+        <p>هذا الكود يُنشئ تخطيطًا شبكيًا للعناصر في الحاوية (container) مع عمودين متساويين وفراغ بينهما بعرض 20 بكسل.</p>
+    </article>
+    <script src="main.js"></script>
+<script>
+  function goBack() {
+  history.back();
+}
+</script>
+</body>
+</html>
