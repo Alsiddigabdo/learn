@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3: شرح</title>
+    <style>
+            /* Reset CSS */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    /* Main styles */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f1f1f1;
+      padding: 20px;
+      background-color:white;
+    }
+    
+    .article {
+      max-width: 800px;
+      background-color: #fff;
+      padding: 20px;
+      margin: 0 auto;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    }
+    
+    h1 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    
+    h2 {
+      font-size: 20px;
+      margin-bottom: 10px;
+      text-align:center ;
+      color:blue;
+    }
+    
+    p {
+      font-size: 16px;
+      line-height: 1.5;
+      margin-bottom: 20px;
+      text-align :center ;
+      color:black;
+    }
+    
+    pre {
+      background-color: #f5f5f5;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    
+    code {
+      color: green;
+    }
+    h1{
+      text-align:center;
+      color:red;
+    }
+    button {
+  position: fixed;
+    top: 15px;
+    right: 10px;
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+    </style>
+</head>
+<body>
+  <button onclick="goBack()">رجوع</button>
+
+<article>
+  <h1>شرح خصائص لغة JavaScript</h1>
+  <p>في هذا المقال، سنتعرف على بعض الخصائص الأساسية في لغة JavaScript ونقدم أمثلة على كيفية استخدامها:</p>
+  <h2>1. العناصر الأساسية:</h2>
+  <p>JavaScript يحتوي على عدة عناصر أساسية تُسهّل كتابة البرامج، ومنها:</p>
+  <h3>- الوظيفة الرئيسية main:</h3>
+  <pre><code class="language-javascript">function main() {
+    // اكتب الكود هنا
+}
+</code></pre>
+  <h3>- التعليقات // و /* ... */:</h3>
+  <pre><code class="language-javascript">// هنا تعليق في سطر واحد
+
+/*
+هنا تعليق
+عدة
+أسطر
+*/
+</code></pre>
+  <h2>2. المتغيرات:</h2>
+  <p>يمكن استخدام المتغيرات لتخزين القيم والبيانات المختلفة، ويتم إعلان المتغيرات باستخدام "var":</p>
+  <pre><code class="language-javascript">var name = "John";
+var age = 30;
+</code></pre>
+  <h2>3. العمليات الحسابية:</h2>
+  <p>يمكن القيام بالعمليات الحسابية الأساسية مثل الجمع والطرح والضرب والقسمة:</p>
+  <pre><code class="language-javascript">var sum = 2 + 2;
+var difference = 5 - 3;
+var multiplication = 4 * 4;
+var division = 10 / 2;
+</code></pre>
+  <h2>4. هياكل التحكم:</h2>
+  <p>يسمح لنا JavaScript بالتحكم في تنفيذ الأكواد باستخدام هياكل التحكم:</p>
+  <h3>- الشرط if و else:</h3>
+  <pre><code class="language-javascript">if (condition) {
+    // الكود إذا تم اكتشاف صحة الشرط
+} else {
+    // الكود إذا كان الشرط غير صحيح
+}
+</code></pre>
+  <h3>- الحلقة for و while:</h3>
+  <pre><code class="language-javascript">for (var i = 0; i < 5; i++) {
+    // اكتب الكود هنا الذي سيتم تنفيذه في كل دورة
+}
+
+var j = 0;
+while (j < 5) {
+    // اكتب الكود هنا الذي سيتم تنفيذه في كل دورة
+    j++;
+}
+</code></pre>
+  <h2>5. الوظائف:</h2>
+  <p>يمكن تعريف واستدعاء الوظائف لإعادة استخدام الأكواد بسهولة:</p>
+  <pre><code class="language-javascript">function greet(name) {
+    console.log("Hello, " + name + "!");
+}
+
+greet("John");
+</code></pre>
+  <h2>6. جمل التحكم:</h2>
+  <p>تساعدنا جمل التحكم على تحديد تدفق التنفيذ في البرامج:</p>
+  <h3>- الإيقاف المبكر break:</h3>
+  <pre><code class="language-javascript">for (var i = 0; i < 10; i++) {
+    if (i === 5) {
+        break; // انهاء الحلقة إذا كانت قيمة i تساوي 5
+    }
+    console.log(i);
+}
+</code></pre>
+  <h3>- السماح بالتنفيذ القادم continue:</h3>
+  <pre><code class="language-javascript">for (var i = 0; i < 10; i++) {
+    if (i === 5) {
+        continue; // الانتقال إلى التكرار القادم إذا كانت قيمة i تساوي 5
+    }
+    console.log(i);
+}
+</code></pre>
+</article>
+
+<article>
+
+<h2>7. المصفوفات:</h2>
+<p>يمكننا استخدام المصفوفات لتخزين مجموعة من القيم والوصول إليها بسهولة:</p>
+<pre><code class="language-javascript">var numbers = [1, 2, 3, 4, 5];
+console.log(numbers[0]); // إظهار العنصر الأول في المصفوفة
+
+numbers[2] = 10; // تعديل قيمة العنصر في المصفوفة
+</code></pre>
+<h2>8. الكائنات:</h2>
+<p>يمكننا إنشاء الكائنات لتمثيل كائن معين يحتوي على خصائص وقيم مختلفة:</p>
+<pre><code class="language-javascript">var person = {
+    name: "John",
+    age: 30,
+    address: "123 Street",
+};
+
+console.log(person.name); // إظهار الخاصية name في الكائن person
+</code></pre>
+<h2>9. الدوال المشغلة ذاتياً:</h2>
+<p>يمكننا استخدام دوال المؤقت setTimeout لتأجيل تنفيذ الأوامر بعد مدة زمنية محددة:</p>
+<pre><code class="language-javascript">setTimeout(function() {
+    // اكتب الكود هنا الذي سيتم تنفيذه بعد فترة زمنية محددة
+}, 2000); // تأخير تنفيذ الأمر لمدة 2 ثانية (2000 ميلي ثانية)
+</code></pre>
+<h2>10. التعامل مع الأحداث:</h2>
+<p>يمكننا تخصيص دوال للاستجابة للأحداث التي يتم تنشيطها بالتفاعل مع الصفحة، مثل النقر على زر معين:</p>
+<pre><code class="language-javascript">document.querySelector("#myButton").addEventListener("click", function() {
+    // اكتب الكود هنا الذي يتم تنفيذه عندما يتم النقر على الزر بمعرف "myButton"
+});
+</code></pre>
+<h2>11. الاستجابة للعمليات الغير متزامنة:</h2>
+<p>يمكننا استخدام الوعود Promise ودوال async وawait للتعامل مع العمليات الغير متزامنة مثل جلب البيانات من خوادم الويب:</p>
+<pre><code class="language-javascript">function fetchData() {
+    return new Promise(function(resolve, reject) {
+        // اكتب الكود هنا لجلب البيانات من خوادم الويب
+        if (data) {
+            resolve(data); // تنفيذ الوعد بجلب البيانات بنجاح
+        } else {
+            reject("Failed to fetch data"); // رفض الوعد في حالة فشل جلب البيانات
+        }
+    });
+}
+
+async function getData() {
+    try {
+        var result = await fetchData(); // استدعاء دالة غير متزامنة باستخدام كلمة الأمر await
+        console.log(result);
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+getData();
+</code></pre>
+</article>
+
+
+<article>
+  
+  <h2>12. التحويل من النص إلى كلام باستخدام تقنية الكلام إلى نص:</h2>
+  <pre><code class="language-javascript">var text = "مرحباً بك!";
+var speech = new SpeechSynthesisUtterance(text);
+
+window.speechSynthesis.speak(speech);
+</code></pre>
+  <h2>13. معالجة الأخطاء:</h2>
+  <p>يمكننا التعامل مع الأخطاء والاستثناءات في الأكواد باستخدام مبدأ try...catch:</p>
+  <pre><code class="language-javascript">try {
+    // إجراء الأكواد التي قد تحدث أخطاء هنا
+} catch(error) {
+    console.log(error); // طباعة الخطأ في واجهة التحكم
+}</code></pre>
+  <h2>14. تطوير واجهة مستخدم التطبيق:</h2>
+  <p>يمكننا إنشاء العناصر الرسومية والتعامل معها في الصفحة مثل استجابة زر النقر:</p>
+  <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;button onclick="myFunction()"&gt;اضغط هنا&lt;/button&gt;
+
+&lt;script&gt;
+function myFunction() {
+  alert("تم النقر على الزر!");
+}
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+  <h2>15. الأحداث:</h2>
+  <p>يمكننا التعامل مع الأحداث واستجابة العناصر للأحداث مثل النقر على زر:</p>
+  <pre><code class="language-javascript">document.getElementById("myButton").addEventListener("click", function() {
+    console.log("تم النقر على الزر!");
+});</code></pre>
+</article>
+
+<article>
+
+<h2>16. إنشاء واستخدام الأشياء (Objects):</h2>
+<p>يمكننا إنشاء واستخدام الأشياء باستخدام الكائنات:</p>
+<pre><code class="language-javascript">var person = {
+    firstName: "John",
+    lastName: "Doe",
+    age: 30,
+    fullName: function() {
+        return this.firstName + " " + this.lastName;
+    }
+};
+
+console.log(person.fullName()); // يطبع "John Doe"</code></pre>
+<h2>17. التحقق من نوع البيانات (Data Type) باستخدام عبارة typeof:</h2>
+<p>يمكننا التحقق من نوع البيانات باستخدام عبارة typeof:</p>
+<pre><code class="language-javascript">var x = 5;
+var y = "Hello";
+
+console.log(typeof x); // يطبع "number"
+console.log(typeof y); // يطبع "string"</code></pre>
+<h2>18. الدوران على قائمة من العناصر بواسطة حلقة for:</h2>
+<p>يمكننا استخدام حلقة for للدوران على قائمة من العناصر:</p>
+<pre><code class="language-javascript">var fruits = ["Apple", "Banana", "Orange"];
+
+for (var i = 0; i < fruits.length; i++) {
+    console.log(fruits[i]);
+}</code></pre>
+<h2>19. إنشاء واستخدام الدوال (Functions):</h2>
+<p>يمكننا إنشاء واستخدام الدوال بسهولة:</p>
+<pre><code class="language-javascript">function greet(name) {
+    console.log("مرحباً " + name + "!");
+}
+
+greet("محمد"); // يطبع "مرحباً محمد!"</code></pre>
+<h2>20. التحقق من وجود عنصر في قائمة باستخدام دالة includes:</h2>
+<p>يمكننا التحقق من وجود عنصر في قائمة باستخدام دالة includes:</p>
+<pre><code class="language-javascript">var fruits = ["Apple", "Banana", "Orange"];
+
+console.log(fruits.includes("Banana")); // يطبع true
+console.log(fruits.includes("Grapes")); // يطبع false</code></pre>
+<h2>21. إجراء عملية تحويل النص إلى رقم باستخدام دالة parseInt:</h2>
+<p>يمكننا تحويل النص إلى رقم باستخدام دالة parseInt:</p>
+<pre><code class="language-javascript">var num = parseInt("10");
+
+console.log(typeof num); // يطبع "number"
+console.log(num + 5); // يطبع 15</code></pre>
+<h2>22. إعادة عدد عشوائي بين قيمتين محددتين باستخدام دالة Math.random:</h2>
+<p>يمكننا إجراء عملية إعادة رقم عشوائي بين قيمتين محددتين باستخدام دالة Math.random:</p>
+<pre><code class="language-javascript">var randomNumber = Math.floor(Math.random() * 10) + 1;
+
+console.log(randomNumber); // يطبع رقم عشوائي بين 1 و 10</code></pre>
+<h2>23. التحقق من صحة شرط متعدد باستخدام العبارة switch:</h2>
+<p>يمكننا استخدام العبارة switch للتحقق من صحة شرط متعدد:</p>
+<pre><code class="language-javascript">var grade = "A";
+
+switch(grade) {
+    case "A":
+        console.log("ممتاز!");
+        break;
+    case "B":
+        console.log("جيد جداً!");
+        break;
+    case "C":
+        console.log("جيد!");
+        break;
+    default:
+        console.log("رسب!");
+}</code></pre>
+<h2>24. إجراء عملية التأخير (Delay) لفترة زمنية محددة بواسطة دالة setTimeout:</h2>
+<p>يمكننا إجراء عملية التأخير لفترة زمنية محددة باستخدام دالة setTimeout:</p>
+<pre><code class="language-javascript">function myFunction() {
+    console.log("أهلاً بك!");
+}
+
+setTimeout(myFunction, 3000); // ينتظر 3 ثواني ثم يطبع "أهلاً بك!"</code></pre>
+<h2>25. تحويل قيمة النص إلى حالة صغيرة أو كبيرة بواسطة دوال toLowerCase و toUpperCase:</h2>
+<p>يمكننا تحويل قيمة النص إلى حالة صغيرة أو كبيرة باستخدام دوال toLowerCase و toUpperCase:</p>
+<pre><code class="language-javascript">var myString = "Hello World";
+
+console.log(myString.toLowerCase()); // يطبع "hello world"
+console.log(myString.toUpperCase()); // يطبع "HELLO WORLD"</code></pre>
+<h2>26. إيقاف الأكواد المتكررة باستخدام الدوال وإعادة استخدامها في أماكن أخرى:</h2>
+<p>يمكننا إيقاف الأكواد المتكررة باستخدام الدوال وإعادة استخدامها في أماكن أخرى:</p>
+<pre><code class="language-javascript"><code class="language-javascript">function addNumbers(a, b) {
+return a + b;
+}
+
+var result1 = addNumbers(5, 10);
+console.log(result1); // يطبع 15
+
+var result2 = addNumbers(20, 30);
+console.log(result2); // يطبع 50</code></pre>
+
+<h2>27. إنشاء واستخدام الأحداث (Events):</h2>
+<p>يمكننا التعامل مع الأحداث واستجابة العناصر للأحداث بسهولة:</p>
+<pre><code class="language-javascript">document.getElementById("myButton").addEventListener("click", function() {
+    console.log("تم النقر على الزر!");
+});</code></pre>
+<h2>28. التحويل من النص إلى كلام باستخدام تقنية الكلام إلى نص:</h2>
+<p>يمكننا تحويل النص إلى كلام باستخدام تقنية الكلام إلى نص المدمجة في المتصفح:</p>
+<pre><code class="language-javascript">var text = "مرحباً بك!";
+var speech = new SpeechSynthesisUtterance(text);
+
+window.speechSynthesis.speak(speech);</code></pre>
+<h2>29. معالجة الأخطاء:</h2>
+<p>يمكننا التعامل مع الأخطاء والاستثناءات باستخدام عبارة try و catch:</p>
+<pre><code class="language-javascript">try {
+    // إجراء الأكواد التي قد تحدث أخطاء هنا
+} catch(error) {
+    console.log(error); // طباعة الخطأ في واجهة التحكم
+}</code></pre>
+<h2>30. تطوير واجهة مستخدم التطبيق:</h2>
+<p>يمكننا إنشاء العناصر الرسومية والتعامل معها في الصفحة باستخدام HTML و JavaScript:</p>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;button onclick="myFunction()"&gt;اضغط هنا&lt;/button&gt;
+
+&lt;script&gt;
+function myFunction() {
+  alert("تم النقر على الزر!");
+}
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p>هذه بعض الخصائص الأساسية والتقنيات الشائعة في لغة JavaScript. يمكن استخدام هذه الخصائص والتقنيات لبناء تطبيقات ومواقع ويب متطورة وفعالة.</p>
+</article>
+
+<article>
+
+<h2>30. لوب لطباعة الأعداد من 30 إلى 40:</h2>
+<p>استخدم حلقة التكرار (Loop) for لطباعة الأعداد من 30 إلى 40:</p>
+<pre><code class="language-javascript">for (var i = 30; i <= 40; i++) {
+    console.log(i);
+}</code></pre>
+<h2>31. تنفيذ دالة معينة بناءً على معاملات معينة:</h2>
+<p>استخدم دالة (Function) لتنفيذ دالة معينة بناءً على معاملات معينة:</p>
+<pre><code class="language-javascript">function myFunction(name, age) {
+    console.log("اسمي " + name + " وعمري " + age + " سنة.");
+}
+
+myFunction("موريسون", 30);</code></pre>
+<h2>32. انشاء واستدعاء كائن:</h2>
+<p>يمكنك إنشاء واستخدام كائن (Object) في JavaScript:</p>
+<pre><code class="language-javascript">var person = {
+    name: "موريسون",
+    age: 30,
+    occupation: "مطور"
+};
+
+console.log(person.name); // يطبع "موريسون"
+console.log(person.age); // يطبع 30
+console.log(person.occupation); // يطبع "مطور"</code></pre>
+<h2>33. استخدام العبارة switch-case لإجراء تسلسل خيارات:</h2>
+<p>يمكنك استخدام العبارة switch-case لإجراء تسلسل بين الخيارات:</p>
+<pre><code class="language-javascript">var day = "السبت";
+
+switch (day) {
+    case "السبت":
+        console.log("يوم راحة");
+        break;
+    case "الأحد":
+    case "الاثنين":
+    case "الثلاثاء":
+    case "الأربعاء":
+    case "الخميس":
+        console.log("يوم عمل");
+        break;
+    case "الجمعة":
+        console.log("يوم عطلة نهاية الأسبوع");
+        break;
+    default:
+        console.log("اليوم غير صحيح");
+        break;
+}</code></pre>
+<h2>34. القفز إلى التالي في حلقة معينة باستخدام العبارة continue:</h2>
+<p>استخدم العبارة continue للقفز إلى التكرار التالي في حلقة for:</p>
+<pre><code class="language-javascript">for (var i = 1; i <= 10; i++) {
+    if (i % 2 === 0) {
+        continue;
+    }
+    console.log(i);
+}</code></pre>
+<h2>35. إجراء عملية تحويل الرقم إلى سلسلة نصية باستخدام دالة toString:</h2>
+<p>استخدم دالة toString لتحويل الرقم إلى سلسلة نصية:</p>
+<pre><code class="language-javascript">var number = 42;
+
+console.log(typeof number.toString()); // يطبع "string"
+console.log(number.toString() + " هو الرقم 42"); // يطبع "42 هو الرقم 42"</code></pre>
+<h2>36. التحقق من صحة تعبير معين باستخدام العبارة if وعبارة التحقق الشرطي الثلاثية:</h2>
+<p>استخدم العبارة if وعبارة التحقق الشرطي الثلاثية للتحقق من صحة تعبير:</p>
+<pre><code class="language-javascript">var num = 5;
+
+console.log(num % 2 === 0 ? "الرقم زوجي" : "الرقم فردي"); // يطبع "الرقم فردي"</code></pre>
+<h2>37. حساب مجموع عناصر المصفوفة باستخدام حلقة for والمتغير المساعد:</h2>
+<p>استخدم حلقة for والمتغير المساعد لحساب مجموع عناصر المصفوفة:</p>
+<pre><code class="language-javascript">var numbers = [1, 2, 3, 4, 5];
+var sum = 0;
+
+for (var i = 0; i < numbers.length; i++) {
+    sum += numbers[i];
+}
+
+console.log("مجموع الأعداد هو " + sum); // يطبع "مجموع الأعداد هو 15"</code></pre>
+<h2>38. انشاء الدوال المستدعاة الذاتياً باستخدام تعبير الدالة:</h2>
+<p>استخدم تعبير الدالة لإنشاء الدوال المستدعاة الذاتياً:</p>
+<pre><code class="language-javascript">var countDown = function(num) {
+    console.log(num);
+
+    if (num > 0) {
+        countDown(num - 1);
+    }
+};
+
+countDown(5);</code></pre>
+<h2>39. تحويل العملة من دولار إلى يورو باستخدام دالة:</h2>
+<p>استخدم دالة لتحويل العملة من دولار إلى يورو:</p>
+<pre><code class="language-javascript">function convertToEuro(dollar) {
+    var euro = dollar * 0.85;
+    return euro;
+}
+
+var dollarAmount = 100;
+var euroAmount = convertToEuro(dollarAmount);
+
+console.log(dollarAmount + " دولار
+يساوي " + euroAmount + " يورو.");</code></pre>
+
+<h2>40. استخدام العبارة forEach للقيام بوظيفة معينة لكل عنصر في المصفوفة:</h2>
+<p>استخدم العبارة forEach لتنفيذ وظيفة معينة لكل عنصر في المصفوفة:</p>
+<pre><code class="language-javascript">var colors = ["أحمر", "أخضر", "أزرق"];
+
+colors.forEach(function(color) {
+    console.log("أنا أحب اللون " + color);
+});</code></pre>
+</article>
+
+
+<article>
+<h2>41. إنشاء واستخدام دالة جديدة باستخدام العبارة function:</h2>
+<p>استخدم العبارة function لإنشاء دالة جديدة واستخدمها:</p>
+<pre><code class="language-javascript">function greet(name) {
+    console.log("مرحباً " + name + "!");
+}
+
+greet("موريسون"); // يطبع "مرحباً موريسون!"</code></pre>
+<h2>42. إضافة عنصر جديد إلى المصفوفة باستخدام دالة push:</h2>
+<p>استخدم دالة push لإضافة عنصر جديد إلى المصفوفة:</p>
+<pre><code class="language-javascript">var fruits = ["تفاح", "بنانا", "برتقال"];
+
+fruits.push("فراولة");
+console.log(fruits); // يطبع ["تفاح", "بنانا", "برتقال", "فراولة"]</code></pre>
+<h2>43. الانتقال إلى الرقم السابق في حلقة معينة باستخدام العبارة break:</h2>
+<p>استخدم العبارة break للانتقال إلى الرقم السابق في حلقة:</p>
+<pre><code class="language-javascript">for (var i = 10; i >= 1; i--) {
+    console.log(i);
+
+    if (i === 5) {
+        break;
+    }
+}</code></pre>
+<h2>44. تنفيذ دالة تحتوي على تعليمات محددة باستخدام العبارة return:</h2>
+<p>استخدم العبارة return لتنفيذ دالة تحتوي على تعليمات محددة:</p>
+<pre><code class="language-javascript">function multiply(num1, num2) {
+    return num1 * num2;
+}
+
+var result = multiply(4, 5);
+console.log(result); // يطبع 20</code></pre>
+<h2>45. انشاء كائن جديد باستخدام العبارة new:</h2>
+<p>استخدم العبارة new لإنشاء كائن جديد:</p>
+<pre><code class="language-javascript">function Person(name, age) {
+    this.name = name;
+    this.age = age;
+}
+
+var person1 = new Person("موريسون", 30);
+var person2 = new Person("روندا", 25);
+
+console.log(person1.name); // يطبع "موريسون"
+console.log(person2.age); // يطبع 25</code></pre>
+<h2>46. استخدام العمليات الحسابية الأساسية في جافا اسكريبت:</h2>
+<p>استخدم العمليات الحسابية الأساسية في جافا اسكريبت:</p>
+<pre><code class="language-javascript">console.log(10 + 5); // الجمع: يطبع 15
+console.log(10 - 5); // الطرح: يطبع 5
+console.log(10 * 5); // الضرب: يطبع 50
+console.log(10 / 5); // القسمة: يطبع 2
+console.log(10 % 3); // الباقي: يطبع 1</code></pre>
+<h2>47. إجراء عملية الجمع على سلسلتين نصيتين:</h2>
+<p>استخدم العبارة + لجمع سلسلتين نصيتين:</p>
+<pre><code class="language-javascript">var string1 = "مرحباً";
+var string2 = "جافا اسكريبت";
+
+var combinedString = string1 + " " + string2;
+console.log(combinedString); // يطبع "مرحباً جافا اسكريبت"</code></pre>
+<h2>48. استخدام العبارة if-else للتحقق من شرط وتنفيذ تعليمات معينة:</h2>
+<p>استخدم العبارة if-else للتحقق من شرط وتنفيذ تعليمات معينة
+:</p>
+
+<pre><code class="language-javascript">var age = 18;
+
+if (age >= 18) {
+    console.log("لديك الحق في الدخول");
+} else {
+    console.log("عذراً، أنت غير مؤهل للدخول");
+}</code></pre>
+<h2>49. استخدام العبارة while لتنفيذ بعض التعليمات حسب شرط محدد:</h2>
+<p>استخدم العبارة while لتنفيذ بعض التعليمات حسب شرط محدد:</p>
+<pre><code class="language-javascript">var i = 1;
+
+while (i <= 5) {
+    console.log(i);
+    i++;
+}</code></pre>
+<h2>50. استخدام العبارة do-while لتنفيذ بعض التعليمات حسب شرط محدد وبعد ذلك التحقق من الشرط:</h2>
+<p>استخدم العبارة do-while لتنفيذ بعض التعليمات حسب شرط محدد وبعد ذلك التحقق من الشرط:</p>
+<pre><code class="language-javascript">var i = 1;
+
+do {
+    console.log(i);
+    i++;
+} while (i <= 5);</code></pre>
+</article>
+
+<article>
+<pre><code class="language-javascript"<h2>51. استخدام العملية التكرارية for...in لتكرار عناصر كائن:</h2>
+
+var person = {
+    name: "موريسون",
+    age: 30,
+    profession: "مطور"
+};
+
+for (var key in person) {
+    console.log(key + ": " + person[key]);
+}</code></pre>
+<h2>52. استخدام العملية التكرارية for...of لتكرار عناصر مصفوفة:</h2>
+<p>استخدم العملية التكرارية for...of لتكرار عناصر مصفوفة:</p>
+<pre><code class="language-javascript">var fruits = ["تفاح", "بنانا", "برتقال"];
+
+for (var fruit of fruits) {
+    console.log(fruit);
+}</code></pre>
+<h2>53. الحصول على طول مصفوفة باستخدام الخاصية length:</h2>
+<p>احصل على طول المصفوفة باستخدام الخاصية length:</p>
+<pre><code class="language-javascript">var fruits = ["تفاح", "بنانا", "برتقال"];
+
+console.log(fruits.length); // يطبع 3</code></pre>
+<h2>54. إجراء عملية تقسيم نص إلى مصفوفة باستخدام العبارة split:</h2>
+<p>اجرِ عملية تقسيم النص إلى مصفوفة باستخدام العبارة split:</p>
+<pre><code class="language-javascript">var sentence = "مرحبا العالم";
+
+var words = sentence.split(" ");
+console.log(words); // يطبع ["مرحبا", "العالم"]</code></pre>
+<h2>55. إجراء عملية انضمام عناصر مصفوفة إلى نص واحد باستخدام العبارة join:</h2>
+<p>اجرِ عملية انضمام عناصر المصفوفة إلى نص واحد باستخدام العبارة join:</p>
+<pre><code class="language-javascript">var words = ["مرحبا", "العالم"];
+
+var sentence = words.join(" ");
+console.log(sentence); // يطبع "مرحبا العالم"</code></pre>
+<h2>56. تحويل رقم إلى نص باستخدام الدالة toString:</h2>
+<p>قم بتحويل الرقم إلى نص باستخدام الدالة toString:</p>
+<pre><code class="language-javascript">var num = 10;
+
+var str = num.toString();
+console.log(str); // يطبع "10"</code></pre>
+<h2>57. تحويل نص إلى رقم صحيح باستخدام الدالة parseInt:</h2>
+<p>قم بتحويل النص إلى رقم صحيح باستخدام الدالة parseInt:</p>
+<pre><code class="language-javascript">var str = "24";
+
+var num = parseInt(str);
+console.log(num); // يطبع 24</code></pre>
+<h2>58. تحويل نص إلى رقم عشري باستخدام الدالة parseFloat:</h2>
+<p>قم بتحويل النص إلى رقم عشري باستخدام الدالة parseFloat:</p>
+<pre><code class="language-javascript">var str = "3.14";
+
+var num = parseFloat(str);
+console.log(num); // يطبع 3.14</code></pre>
+<h2>59. الحصول على الوقت الحالي باستخدام الكائن Date:</h2>
+<p>احصل على الوقت الحالي باستخدام الكائن Date:</p>
+<pre><code class="language-javascript">var currentDate = new Date();
+
+console.log(currentDate); // يطبع تاريخ ووقت الحالي</code></pre>
+<h2>60. إنشاء واستخدام دالة مجهولة باستخدام العبارة anonymous function:</h2>
+<p>قم بإنشاء واستخدام دالة مجهولة باستخدام العبارة anonymous function:</p>
+<pre><code class="language-javascript">var greet = function(name) {
+    console.log("مرحباً " + name + "!");
+};
+
+greet("موريسون"); // يطبع "مرحباً موريسون!"</code></pre>
+</article>
+
+<article>
+    <h2>61. استخدام الكائن Math لإجراء حسابات رياضية:</h2>
+    <pre><code class="language-javascript">
+        var num1 = 10;
+        var num2 = 5;
+
+        var sum = Math.add(num1, num2);
+        console.log(sum); // يطبع 15
+
+        var product = Math.multiply(num1, num2);
+        console.log(product); // يطبع 50
+
+        var squareRoot = Math.sqrt(num1);
+        console.log(squareRoot); // يطبع 3.1622776601683795
+    </code></pre>
+
+    <h2>62. إنشاء طرق على الكائنات باستخدام prototype:</h2>
+    <pre><code class="language-javascript">
+        function Person(name) {
+            this.name = name;
+        }
+
+        Person.prototype.greet = function() {
+            console.log("مرحباً، أنا " + this.name + "!");
+        };
+
+        var person = new Person("موريسون");
+        person.greet(); // يطبع "مرحباً، أنا موريسون!"
+    </code></pre>
+
+    <!-- المزيد من الأكواد... -->
+
+    <h2>70. إجراء عملية تحويل حرف إلى رمز ASCII والعكس باستخدام الدالتين charCodeAt و String.fromCharCode:</h2>
+    <pre><code class="language-javascript">
+        var char = "A";
+        var asciiCode = char.charCodeAt(0);
+        console.log(asciiCode); // يطبع 65
+
+        var newChar = String.fromCharCode(65);
+        console.log(newChar); // يطبع "A"
+    </code></pre>
+</article>
+    <script src="main.js"></script>
+<script>
+  function goBack() {
+  history.back();
+}
+</script>
+</body>
+</html>
