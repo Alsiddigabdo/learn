@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>جافا اسكريبت level1: شرح</title>
+    <style>
+            /* Reset CSS */
+body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        article {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: red;
+        }
+        h2 {
+            text-align: center;
+            color: blue;
+        }
+        pre {
+            background-color: #f5f5f5;
+            padding: 10px;
+            overflow-x: auto;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            white-space: pre-wrap;
+        }
+            code {
+              color: green;
+            }
+        ol {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+
+        @media screen and (max-width: 768px) {
+            /* تنسيق العنوان والكتابة الشفرة في شاشات الأحجام الصغيرة */
+            h1 {
+                font-size: 24px;
+            }
+            pre {
+                font-size: 14px;
+            }
+        }
+
+        /* إضافة جماليات إضافية */
+        body {
+            background-color: #f8f8f8;
+            padding: 20px;
+        }
+        article {
+            background-color: #fff;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+        ol {
+            list-style: decimal;
+        }
+        li::marker {
+            color: #3498db;
+        }
+button {
+  position: fixed;
+    top: 15px;
+    right: 10px;
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+
+    </style>
+</head>
+<body>
+<h1>تعابير Regular Expressions في لغة JavaScript</h1>
+<pre>
+<code>
+// تعتبر Regular Expressions (التعابير العادية) أداة قوية تُستخدم في البرمجة للبحث وتحليل وتعديل النصوص بناءً على نمط محدد. تسمح لك التعابير العادية بتحديد قواعد معينة لتتطابق معها السلاسل النصية وتنفيذ إجراءات معينة عليها.
+
+// هنا بعض الأمثلة لاستخدام التعابير العادية في لغة JavaScript:
+
+<h2>// 1. العثور على تطابق نص:</h2>
+const str = "Hello, World!";
+const pattern = /World/; // قمنا هنا بتحديد نمط يبحث عن الكلمة World
+console.log(pattern.test(str)); // ستعيد قيمة true لأن النص يحتوي على كلمة World
+
+<h2>// 2. تطابق باستخدام حد البداية</h2> والنهاية:
+const str = "Hello, World!";
+const pattern = /^Hello/; // تطابق الكلمة Hello في بداية النص
+console.log(pattern.test(str)); // ستعيد قيمة true لأن النص يبدأ بكلمة Hello
+
+<h2>// 3. البحث عن تطابق متعدد:</h2>
+const str = "Hello, Hello World!";
+const pattern = /Hello/g; // تطابق جميع حالات الكلمة Hello في النص
+console.log(str.match(pattern)); // ستطبع كل مطابقة للنص Hello
+
+<h2>// 4. استخدام زمن الصفر أو أكثر:</h2>
+const str = "Helllo, Hello, Helloo, Hellooo";
+const pattern = /Hel+o/; // تطابق أي عدد من الحروف l بعد الحرف e في كلمة Hello
+console.log(str.match(pattern)); // ستطبع جميع التطابقات: Hello, Helloo, Hellooo
+</code>
+  </pre>
+  
+  
+  
+  <pre>
+  <code>
+  <h2>// 5. استبدال النص:</h2>
+  const str = "Hello, World!";
+  const pattern = /World/;
+  const result = str.replace(pattern, "Universe"); // استبدلنا الكلمة World بكلمة Universe
+  console.log(result); // ستطبع "Hello, Universe!"
+  
+ <h2>// 6. استخدام الاختزال:</h2>
+  const str = "Hello, World!";
+  const pattern = /[a-z]/g; // البحث عن أي حرف صغير في النص
+  console.log(str.match(pattern)); // ستطبع جميع الأحرف الصغيرة في النص: ["e", "l", "l", "o", "o", "r", "l", "d"]
+  
+ <h2>// 7. تحديد الحدود:</h2>
+  const str = "I love apples, oranges, and bananas.";
+  const pattern = /\b(apples|oranges|bananas)\b/; // تحديد تطابق كلمة من بين الكلمات المذكورة فقط
+  console.log(pattern.test(str)); // ستعيد قيمة true لأن النص يحتوي على إحدى الكلمات المحددة
+  
+  <h2>// 8. البحث عن التطابق الكبير الصغير:</h2>
+  const str = "Hello, World!";
+  const pattern = /hello/i; // البحث عن كلمة hello بغض النظر عن حالة الأحرف (كبيرة/صغيرة)
+  console.log(pattern.test(str)); // ستعيد قيمة true لأنه تم العثور على التطابق بغض النظر عن حالة الأحرف
+  </code>
+    </pre>
+    <h1>البرمجة الموجهة نحو الكائنات (Object Oriented Programming)</h1>
+  <pre>
+    
+<code>
+  <h2>
+// البرمجة الموجهة نحو الكائنات هي نهج لتصميم وتنظيم البرامج يستخدم مفهوم الكائنات والتلاعب بها. تهدف إلى تنظيم البرامج بشكل منطقي وهيكلي وزيادة إعادة الاستخدام وصيانة الشفرة وفهمها.
+
+// تتكون البرامج في البرمجة الموجهة نحو الكائنات من كائنات مختلفة، حيث يتم تعريف كل كائن بواسطة خصائصه وسلوكه. يمكن للكائنات التفاعل مع بعضها البعض عبر الاستدعاءات والتفاعلات بين الأساليب.
+
+// استخدامات البرمجة الموجهة نحو الكائنات:
+// 1. التجزئة: يتيح البرمجة الموجهة نحو الكائنات تجزئة البرنامج إلى مجموعة من الكائنات المستقلة والمتعاونة. هذا يسهل فهم وصيانة الشفرة ويسهل إعادة استخدام أجزاء البرنامج.
+
+// 2. التورث: يسمح البرمجة الموجهة نحو الكائنات بتوسيع الكائنات القائمة من خلال إنشاء كائنات جديدة ترث الخصائص والسلوك من الكائنات الأصلية. هذا يزيد من إعادة استخدام الشفرة ويسمح بإنشاء هيكل أكثر تنظيمًا وبرمجة أقل.
+
+// 3. التعبير عن العلاقات: يمكن للبرمجة الموجهة نحو الكائنات أن تعكس العلاقات بين الكائنات في البرنامج بوضوح. على سبيل المثال، يمكن تعريف علاقة "Has-a" لتوضيح الارتباط بين كائن وكائن آخر، مثل "الكائن الأستاذ يملك الكائن الطالب".
+
+// 4. الاستحواذ والتعتيم: يسمح البرمجة الموجهة نحو الكائنات للمطورين بتقسيم البرنامج إلى وحدات صغيرة ومستقلة تعمل على تجاوز المعلومات والتلاعب بها. يمكن تحديد حدود الوصول للتحكم في تدفق البيانات والحفاظ على سلامة البرنامج.
+
+// بعض الأمثلة المشهورة على البرمجة الموجهة نحو الكائنات هي لغات البرمجة مثل جافا وسي++ وبايثون. في هذه اللغات، يتم استخدام الكائنات لتمثيل العناصر الحقيقية في العالم، مثل السيارات والمستخدمين والمنتجات. يتيح هذا للمطورين إنشاء برامج تتفاعل مع الكائنات وتتلاعب بها على أساس السلوك والخصائص التي يحددها المطور.
+
+// من المثال على الكود في جافا:</h2>
+<code>
+public class Car {
+    private String brand;
+    private int year;
+    
+    public Car(String brand, int year) {
+        this.brand = brand;
+        this.year = year;
+    }
+    
+    public void startEngine() {
+        System.out.println("Engine started!");
+    }
+    
+    public void stopEngine() {
+        System.out.println("Engine stopped!");
+    }
+    
+    public String getBrand() {
+        return brand;
+    }
+    
+    public int getYear() {
+        return year;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Car myCar = new Car("Toyota", 2020);
+        myCar.startEngine();
+        System.out.println("Brand: " + myCar.getBrand());
+        System.out.println("Brand: " + myCar.getBrand());
+        System.out.println("Year: " + myCar.getYear());
+        myCar.stopEngine();
+    }
+}
+</code>
+</pre>
+
+
+<h1>شرح Date, Time, Generators & Modules في جافاسكريبت</h1>
+  <pre>
+<code>
+// 1. Date و Time:
+// يتم استخدام كائن Date في جافاسكريبت للتعامل مع التواريخ والأوقات. يمكن استخدامه لإنشاء تواريخ، وقراءة التواريخ الحالية، وتنسيق التواريخ، وإجراء عمليات حسابية على التواريخ.
+<h2>
+// مثال:
+// إنشاء Date جديد</h2>
+let currentDate = new Date();
+<h2>
+// قراءة التاريخ الحالي</h2>
+console.log(currentDate); 
+<h2>
+// استخراج يوم الأسبوع</h2>
+console.log(currentDate.getDay()); 
+<h2>
+// استخراج الشهر</h2>
+console.log(currentDate.getMonth() + 1); 
+<h2>
+//    تنسيق التاريخ</h2>
+console.log(currentDate.toLocaleDateString());
+
+<h2>
+// 2. Generators (المولدات):</h2>
+// المولدات تمثل وحدات تنفيذية يمكنها إنشاء سلسلة مترابطة من القيم بطريقة كسلية وتأجيل التنفيذ. يتيح لك استخدام المولدات بدء وقف تنفيذ الكود واسترجاع النتائج واستخدامها بحسب الطلب.
+<h2>
+// مثال:
+// إنشاء مولد بسيط</h2>
+function* numberGenerator() {
+  yield 1;
+  yield 2;
+  yield 3;
+}
+
+let generator = numberGenerator();
+
+// استخدام المولد للاستدعاء التالي
+console.log(generator.next().value); // 1
+console.log(generator.next().value); // 2
+console.log(generator.next().value); // 3
+
+<h2>
+// 3. Modules (الوحدات):</h2>
+// بالوحدات يمكنك تقسيم الكود إلى أجزاء صغيرة قابلة لإعادة الاستخدام وإدارتها بشكل منفصل. يتيح لك الوحدات استيراد وتصدير العناصر بين الملفات وتنظيم البرنامج بشكل هيكلي ومنظم.
+<h2>
+// مثال:
+// في ملف math.js؛ </h2>
+
+export function add(a, b) {
+  return a + b;
+}
+
+export function subtract(a, b) {
+  return a - b;
+}
+
+
+// في ملف main.js
+
+import { add, subtract } from './math.js';
+
+console.log(add(5, 3)); // 8
+console.log(subtract(5, 3)); // 2
+</code>
+  </pre>
+  
+   <pre>
+<code>
+  <h2>
+// 4. Date و Time:</h2>
+
+// - تحويل التاريخ إلى سلسلة نصية معينة:
+let date = new Date();
+let formattedDate = date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+console.log(formattedDate); // يطبع: July 28, 2023
+<h2>
+// - حساب الفروق بين تواريخ مختلفة:</h2>
+let startDate = new Date(2023, 6, 1); // تمثل تاريخ 1 يوليو 2023
+let endDate = new Date(2023, 6, 30); // تمثل تاريخ 30 يوليو 2023
+let timeDiff = Math.abs(endDate - startDate);
+let daysDiff = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
+console.log(daysDiff); // يطبع: 29
+
+<h2>
+// 5. Generators (المولدات):</h2>
+
+// - إنشاء سلسلة للأرقام الفردية:
+function* oddNumbers() {
+  let num = 1;
+  while (true) {
+    yield num;
+    num += 2;
+  }
+}
+
+let generator = oddNumbers();
+
+console.log(generator.next().value); // يطبع: 1
+console.log(generator.next().value); // يطبع: 3
+console.log(generator.next().value); // يطبع: 5
+
+// - الاستخدام في هيكلة الأكواد بشكل أفضل:
+function* fibonacci() {
+  let [prev, curr] = [0, 1];
+  while (true) {
+    [prev, curr] = [curr, prev + curr];
+    yield curr;
+  }
+}
+
+let generator = fibonacci();
+
+for (let i = 0; i < 10; i++) {
+  console.log(generator.next().value);
+}
+// يطبع: 1, 2, 3, 5, 8, 13, 21, 34, 55, 89
+<h2>
+
+// 6. Modules (الوحدات):</h2>
+
+// - استيراد من ملف آخر واستخدام الدوال والمتغيرات:
+// في ملف greeting.js
+export function sayHello(name) {
+  console.log(`Hello, ${name}!`);
+}
+
+// في ملف main.js
+import { sayHello } from './greeting.js';
+
+sayHello('John'); // يطبع: Hello, John!
+
+// - استيراد كل العناصر المصدر من ملف آخر:
+// في ملف math.js
+export function add(a, b) {
+  return a + b;
+}
+
+export function subtract(a, b) {
+  return a - b;
+}
+
+// في ملف main.js
+import * as math from './math.js';
+
+console.log(math.add(5, 3)); // يطبع: 8
+console.log(math.subtract(5, 3)); // يطبع: 2
+</code>
+  </pre>
+
+</body>
+
+</html>
