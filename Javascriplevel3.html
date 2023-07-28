@@ -86,6 +86,7 @@ button {
     </style>
 </head>
 <body>
+      <button onclick="goBack()">رجوع</button>
 <h1>تعابير Regular Expressions في لغة JavaScript</h1>
 <pre>
 <code>
@@ -353,5 +354,11 @@ console.log(math.subtract(5, 3)); // يطبع: 2
   </pre>
 
 </body>
+        <script src="main.js"></script>
+    <script>
+        function goBack() {
+  history.back();
+        }
+    </script>
 
 </html>
