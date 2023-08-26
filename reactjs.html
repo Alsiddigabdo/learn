@@ -1025,14 +1025,109 @@ class Button extends React.Component {
   ReactDOM.render(&lt;Form /&gt;, document.getElementById('root'));
           </code></pre>
   </article>
-  </body>
   
-  </html>
 <p>في الكود أعلاه ، قمت بإنشاء مكون "Form" بمساعدة React. يحتوي النموذج على حقلين: الاسم (name) والبريد الإلكتروني (email). يتم تعديل حالة المكون عند تغيير الحقول باستخدام handleChange. يتم تنشيط الدالة handleSubmit عند النقر على زر الإرسال (submit) ، حيث ستتم معالجة البيانات المدخلة.
 
 عند تغيير الحقل، يتم استخدام الأحداث على المستهدف (onChange) لتحديث قيمة الحقول في الحالة باستخدام الدالة handleChange.يقوم handleChange باستخلاص الاسم والقيمة من event.target ويقوم بتحديث حالة المكون بناءً على ذلك.
 
 عند إرسال النموذج، يتم استدعاء الدالة handleSubmit عند النقر على زر الإرسال (submit)، حيث ستقوم بمنع الأحداث الافتراضية ومعالجة البيانات المدخلة. في هذا المثال، سيتم عرض بيانات النموذج في وحدة التحكم (console.log) وإعادة تعيين حالة المكون إلى القيم الافتراضية بعد الإرسال.</p>
+
+<article>
+    <h1>مفهوم العرض الشرطي (Conditional Rendering) في React.js</h1>
+    <p>في React.js ، يمكننا استخدام شروط لتحديد متى يجب على المكون عرض عنصر معين أو عدم عرضه. هذا يتيح لنا تغيير مظهر ومحتوى المكون استنادًا إلى حالة معينة أو أي شرط آخر.</p>
+    <ol>
+      <li>
+        <strong>إنشاء ملف جديد:</strong>
+        <p>قم بإنشاء ملف جديد بامتداد ".jsx".</p>
+      </li>
+      <li>
+        <strong>إضافة الكود التالي:</strong>
+        <p>قم بإضافة الكود التالي في الملف:</p>
+        <pre><code>import React from 'react';
+
+class Greeting extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isLoggedIn: false
+    };
+  }
+
+  render() {
+    if (this.state.isLoggedIn) {
+      return &lt;h1&gt;Welcome back!&lt;/h1&gt;;
+    } else {
+      return &lt;h1&gt;Please log in.&lt;/h1&gt;;
+    }
+  }
+};
+
+export default Greeting;</code></pre>
+        <p>قم باستيراد مكتبة React.<br>
+          قم بتعريف المكون `Greeting` والذي يحتوي على حالة `isLoggedIn` التي تحتوي على قيمة افتراضية `false`.<br>
+          تعتمد دالة `render` على حالة `isLoggedIn` لتقرر ما إذا كانت ستظهر رسالة الترحيب "Welcome back!" في حالة تسجيل الدخول ، أم رسالة "Please log in." في حالة عدم تسجيل الدخول.</p>
+      </li>
+      <li>
+        <strong>استخدام تعبير تراثي:</strong>
+        <p>يمكن أيضًا استخدام تعبير تراثي (ternary expression) لتحقيق نفس النتيجة في شكل مختصر:</p>
+        <pre><code>render() {
+  return (
+    &lt;div&gt;
+      {this.state.isLoggedIn ? &lt;h1&gt;Welcome back!&lt;/h1&gt; : &lt;h1&gt;Please log in.&lt;/h1&gt;}
+    &lt;/div&gt;
+  );
+}</code></pre>
+      </li>
+    </ol>
+    <p>هذا هو مفهوم العرض الشرطي في React.js. يمكن استخدامه لإظهار وإخفاء أجزاء محددة من التطبيق استنادًا إلى حالة معينة أو أي شرط آخر.</p>
+  </article>
+<h1>Lists and Keys</h1>
+  <article>
+    <h2>قوائم ومفاتيح العناصر (Lists and Keys) في React.js</h2>
+    <p>في React.js ، يمكننا استخدام القوائم لتجميع وعرض مجموعة من العناصر المتشابهة. ولكي تكون العناصر فريدة وقابلة للتمييز ، يجب توفير مفاتيح (keys) فريدة لكل عنصر في القائمة.</p>
+    <ol>
+      <li>
+        <strong>إنشاء ملف جديد:</strong>
+        <p>قم بإنشاء ملف جديد بامتداد ".jsx".</p>
+      </li>
+      <li>
+        <strong>إضافة الكود التالي:</strong>
+        <p>قم بإضافة الكود التالي في الملف:</p>
+        <pre><code>import React from 'react';
+
+class TodoList extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      todos: [
+        { id: 1, text: 'Learn React' },
+        { id: 2, text: 'Build a Todo App' },
+        { id: 3, text: 'Deploy to Production' }
+      ]
+    };
+  }
+
+  render() {
+    return (
+      &lt;ul&gt;
+        {this.state.todos.map(todo => (
+          &lt;li key={todo.id}&gt;{todo.text}&lt;/li&gt;
+        ))}
+      &lt;/ul&gt;
+    );
+  }
+}
+
+export default TodoList;</code></pre>
+        <p>قم باستيراد مكتبة React.<br>
+          قم بتعريف المكون `TodoList` والذي يحتوي على حالة `todos` وهي مصفوفة من العناصر التي تتكون من `id` و `text`.<br>
+          تستخدم قائمة `todos.map()` لإنشاء عنصر `li` لكل عنصر في قائمة `todos`. يتم توفير المفتاح (key) المميز لكل عنصر باستخدام الخاصية `id` في العنصر.</p>
+      </li>
+    </ol>
+    <p>هذا هو مفهوم القوائم ومفاتيح العناصر في React.js. يسمح لنا هذا المفهوم بإنشاء قوائم من العناصر وتحسين أداء التعامل مع العناصر المتغيرة.</p>
+  </article>
+
+
     <script src="main.js"></script>
     <script>
 const linkElement = document.querySelector("a");
